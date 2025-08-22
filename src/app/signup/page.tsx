@@ -1,10 +1,13 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { useMemo, useState, useRef, useEffect } from "react";
+import type React from "react";
 import Link from "next/link";
 import questionsData from "../forms.json";
-/* === ADIÇÃO: supabase client === */
+/* === supabase client === */
 import { supabaseBrowser } from "@/lib/supabaseBrowser";
+import type { PostgrestError } from "@supabase/supabase-js";
 const supabase = supabaseBrowser; // ✅ objeto do cliente
 
 /** ===============================
@@ -34,6 +37,11 @@ type Question = {
   nextQuestion?: number;
   other?: boolean;
 };
+
+// respostas: string (textos/seleções únicas) ou string[] (checkbox)
+type AnswerValue = string | string[];
+type Answers = Record<number | string, AnswerValue>;
+type PartialSignup = { email?: string; phone_e164?: string };
 
 const QUESTIONS: Question[] = (questionsData as unknown) as Question[];
 
@@ -415,14 +423,14 @@ function PhoneNumberField({
 /** =======================
  *  Validação
  *  ======================= */
-function isAnswerProvided(q: Question, val: any, all?: Record<number | string, any>) {
+function isAnswerProvided(q: Question, val: AnswerValue, all?: Answers) {
   if (q.optional) return true;
 
   switch (q.type) {
     case "shortAnswer":
     case "paragraph":
     case "dropdown":
-    case "multipleChoice":
+    case "multipleChoice": {
       if (typeof val === "string" && val.trim().length > 0) {
         if (q.other && val === "Other") {
           return !!String(all?.[`${q.id}_other`] ?? "").trim();
@@ -430,8 +438,9 @@ function isAnswerProvided(q: Question, val: any, all?: Record<number | string, a
         return true;
       }
       return false;
+    }
 
-    case "checkbox":
+    case "checkbox": {
       if (Array.isArray(val) && val.length > 0) {
         if (q.other && val.includes("Other")) {
           return !!String(all?.[`${q.id}_other`] ?? "").trim();
@@ -439,6 +448,7 @@ function isAnswerProvided(q: Question, val: any, all?: Record<number | string, a
         return true;
       }
       return false;
+    }
 
     case "phoneNumber":
       return typeof val === "string" && isE164(val);
@@ -454,7 +464,7 @@ function isAnswerProvided(q: Question, val: any, all?: Record<number | string, a
 /** =======================
  *  Roteamento
  *  ======================= */
-function getNextQuestionId(q: Question, answer: any): number {
+function getNextQuestionId(q: Question, answer: AnswerValue): number {
   if (q.choices && (q.type === "multipleChoice" || q.type === "dropdown")) {
     const selected = String(answer ?? "");
     const hit = q.choices.find((c) => c.choice === selected);
@@ -479,7 +489,7 @@ function getNextQuestionId(q: Question, answer: any): number {
 /** =======================
  *  Mapeamento -> colunas da tabela
  *  ======================= */
-function mapAnswersToColumns(all: Record<number | string, any>) {
+function mapAnswersToColumns(all: Answers) {
   const get = (id: number) => all[id];
   const getOther = (id: number) => all[`${id}_other`];
 
@@ -553,12 +563,25 @@ function mapAnswersToColumns(all: Record<number | string, any>) {
 }
 
 /** =======================
+ *  Logger de erro tipado
+ *  ======================= */
+function logSbError(where: string, error: PostgrestError | null) {
+  if (!error) return;
+  console.error(where, {
+    message: error.message,
+    code: error.code,
+    details: error.details,
+    hint: error.hint,
+  });
+}
+
+/** =======================
  *  Página
  *  ======================= */
 export default function SignupPage() {
   const firstId = getFirstQuestionId();
   const [consent, setConsent] = useState(false);
-  const [answers, setAnswers] = useState<Record<number | string, any>>({});
+  const [answers, setAnswers] = useState<Answers>({});
   const [currentId, setCurrentId] = useState<number>(firstId);
   const [history, setHistory] = useState<number[]>(currentId !== -1 ? [currentId] : []);
   const [submitted, setSubmitted] = useState(false);
@@ -566,18 +589,17 @@ export default function SignupPage() {
 
   const currentQuestion = useMemo(() => getQuestionById(currentId), [currentId]);
 
-const progress = useMemo(() => {
-  const total = QUESTIONS.length;
-  const answered = Object.keys(answers)
-    .filter((k) => !Number.isNaN(Number(k))) // pega só ids numéricos (ignora "_other")
-    .length;
-  const pct = Math.min(100, Math.round((answered / total) * 100));
-  return Number.isNaN(pct) ? 0 : pct;
-}, [answers]);
-
+  const progress = useMemo(() => {
+    const total = QUESTIONS.length;
+    const answered = Object.keys(answers)
+      .filter((k) => !Number.isNaN(Number(k))) // apenas ids numéricos (ignora "_other")
+      .length;
+    const pct = Math.min(100, Math.round((answered / total) * 100));
+    return Number.isNaN(pct) ? 0 : pct;
+  }, [answers]);
 
   useEffect(() => {
-    const savedAnswers = lsGet<Record<number | string, any>>("ettle_answers", {});
+    const savedAnswers = lsGet<Answers>("ettle_answers", {});
     const savedConsent = lsGet<boolean>("ettle_consent", false);
     const savedCurrentId = lsGet<number>("ettle_currentId", firstId);
     const savedHistory = lsGet<number[]>("ettle_history", savedCurrentId !== -1 ? [savedCurrentId] : []);
@@ -592,7 +614,10 @@ const progress = useMemo(() => {
     }
 
     if (!sid) {
-      sid = (typeof crypto !== "undefined" && "randomUUID" in crypto ? crypto.randomUUID() : `${Date.now()}-${Math.random()}`);
+      sid =
+        typeof crypto !== "undefined" && "randomUUID" in crypto
+          ? crypto.randomUUID()
+          : `${Date.now()}-${Math.random()}`;
       lsSet("ettle_submission_id", sid);
     }
     setSubmissionId(sid);
@@ -602,7 +627,7 @@ const progress = useMemo(() => {
     lsSet("ettle_consent", consent);
   }, [consent]);
 
-  function setAnswer(questionId: number | string, value: any) {
+  function setAnswer(questionId: number | string, value: AnswerValue) {
     setAnswers((prev) => {
       const next = { ...prev, [questionId]: value };
       lsSet("ettle_answers", next);
@@ -611,7 +636,7 @@ const progress = useMemo(() => {
   }
 
   /** ====== ENVIO PARCIAL (email / telefone) ====== */
-  async function upsertPartial(partial: Record<string, any>) {
+  async function upsertPartial(partial: PartialSignup) {
     const payload = {
       run_id: getRunId(),
       ...partial,
@@ -622,23 +647,17 @@ const progress = useMemo(() => {
       .from("signup_submissions")
       .upsert(payload, { onConflict: "run_id" });
 
-    if (error) {
-      console.error("Supabase partial upsert error:", {
-        message: (error as any)?.message,
-        code: (error as any)?.code,
-        details: (error as any)?.details,
-      });
-    }
+    logSbError("Supabase partial upsert error", error);
   }
 
-  async function sendPartialIfNeeded(q: Question, val: any) {
+  async function sendPartialIfNeeded(q: Question, val: AnswerValue) {
     if (!isAnswerProvided(q, val, answers)) return;
 
-    if (q.type === "email") {
-      await upsertPartial({ email: String(val).trim() });
+    if (q.type === "email" && typeof val === "string") {
+      await upsertPartial({ email: val.trim() });
     }
-    if (q.type === "phoneNumber") {
-      await upsertPartial({ phone_e164: String(val) });
+    if (q.type === "phoneNumber" && typeof val === "string") {
+      await upsertPartial({ phone_e164: val });
     }
   }
 
@@ -671,12 +690,9 @@ const progress = useMemo(() => {
         .select("id")
         .single();
 
+      logSbError("Supabase final upsert error", error);
+
       if (error) {
-        console.error("Supabase final upsert error:", {
-          message: (error as any)?.message,
-          code: (error as any)?.code,
-          details: (error as any)?.details,
-        });
         alert("There was an error saving your responses. Please try again.");
         return;
       }
@@ -826,7 +842,7 @@ const progress = useMemo(() => {
                   {q.other && (val as string) === "Other" && (
                     <div className="mt-4">
                       <ShortAnswerField
-                        value={answers[`${q.id}_other`] ?? ""}
+                        value={answers[`${q.id}_other`] as string ?? ""}
                         onChange={(v) => setAnswer(`${q.id}_other`, v)}
                         placeholder="Please specify..."
                       />
@@ -845,7 +861,7 @@ const progress = useMemo(() => {
                   {q.other && (val as string) === "Other" && (
                     <div className="mt-4">
                       <ShortAnswerField
-                        value={answers[`${q.id}_other`] ?? ""}
+                        value={answers[`${q.id}_other`] as string ?? ""}
                         onChange={(v) => setAnswer(`${q.id}_other`, v)}
                         placeholder="Please specify..."
                       />
@@ -864,7 +880,7 @@ const progress = useMemo(() => {
                   {q.other && Array.isArray(val) && val.includes("Other") && (
                     <div className="mt-4">
                       <ShortAnswerField
-                        value={answers[`${q.id}_other`] ?? ""}
+                        value={answers[`${q.id}_other`] as string ?? ""}
                         onChange={(v) => setAnswer(`${q.id}_other`, v)}
                         placeholder="Please specify..."
                       />
