@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+/* Custom theme tokens (CSS-first in v4) */
+@theme {
+  --color-background: #181819;
+  --color-primary: #FF6831;
+  --color-light: #FFFFFF;
+  --color-surface: #202024;
+  --color-muted: #9CA3AF;
+
+  --radius-soft: 1.25rem;
+  --shadow-glow: 0 0 0 8px rgba(255, 104, 49, 0.12);
+}
+
+:root { color-scheme: dark; }
+
+html, body {
+  background: var(--color-background);
+  color: var(--color-light);
+  font-family: 'Inter', sans-serif;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-[var(--radius-soft)]
+         bg-[var(--color-primary)] px-6 py-3 font-semibold text-white
+         transition-transform hover:scale-105 focus:outline-none focus:shadow-[var(--shadow-glow)];
+}
+
+.card {
+  @apply rounded-[var(--radius-soft)] bg-[var(--color-surface)]
+         p-6 border border-white/5;
+}
