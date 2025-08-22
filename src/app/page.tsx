@@ -9,7 +9,7 @@ export default function Home() {
       <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-[color:var(--color-background)/0.6] bg-[color:var(--color-background)/0.8] border-b border-white/5">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
           <div className="flex items-center gap-3">
-            <Image src="/logo.png" alt="Ettle logo" width={36} height={36} />
+            <Image src="/logo.png" alt="Ettle logo" width={50} height={50} />
             <span className="text-lg font-semibold">Ettle</span>
           </div>
           <nav className="hidden items-center gap-6 md:flex text-sm text-[var(--color-muted)]">
@@ -46,14 +46,14 @@ export default function Home() {
           </div>
 
           {/* Visual */}
-          <div className="relative mx-auto w-full max-w-md">
-            <div className="card">
+          <div className="relative flex items-center justify-center mx-auto w-full max-w-md">
+            <div className="">
               <Image
                 src="/mockup-phone.png"
                 alt="Ettle app mockup"
-                width={900}
-                height={900}
-                className="h-auto -z-30 w-full rounded-[1rem]"
+                width={300}
+                height={300}
+                className="h-auto -z-30 rounded-[1rem]"
               />
             </div>
           </div>

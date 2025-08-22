@@ -10,6 +10,11 @@ import { supabaseBrowser } from "@/lib/supabaseBrowser";
 import type { PostgrestError } from "@supabase/supabase-js";
 const supabase = supabaseBrowser; // ✅ objeto do cliente
 
+/* === PHONE: lib responsiva com todos os países === */
+import { PhoneInput } from "react-international-phone";
+import "react-international-phone/style.css"; // se preferir, mova para app/layout.tsx
+import { isValidPhoneNumber } from "libphonenumber-js";
+
 /** ===============================
  *  Tipos
  *  =============================== */
@@ -46,31 +51,6 @@ type PartialSignup = { email?: string; phone_e164?: string };
 const QUESTIONS: Question[] = (questionsData as unknown) as Question[];
 
 /** =======================
- *  Countries
- *  ======================= */
-type Country = {
-  iso2: string;
-  name: string;
-  dialCode: string;
-  example: string;
-};
-
-const COUNTRIES: Country[] = [
-  { iso2: "gb", name: "United Kingdom", dialCode: "44", example: "+44 7123 456789" },
-  { iso2: "ie", name: "Ireland", dialCode: "353", example: "+353 85 123 4567" },
-  { iso2: "us", name: "United States", dialCode: "1", example: "+1 415 555 2671" },
-  { iso2: "br", name: "Brazil", dialCode: "55", example: "+55 11 91234 5678" },
-  { iso2: "pt", name: "Portugal", dialCode: "351", example: "+351 912 345 678" },
-  { iso2: "es", name: "Spain", dialCode: "34", example: "+34 612 34 56 78" },
-  { iso2: "fr", name: "France", dialCode: "33", example: "+33 6 12 34 56 78" },
-  { iso2: "de", name: "Germany", dialCode: "49", example: "+49 1512 3456789" },
-  { iso2: "it", name: "Italy", dialCode: "39", example: "+39 345 123 4567" },
-  { iso2: "se", name: "Sweden", dialCode: "46", example: "+46 70 123 45 67" },
-];
-
-const DEFAULT_COUNTRY = COUNTRIES[0];
-
-/** =======================
  *  Helpers
  *  ======================= */
 function generateUUIDFallback() {
@@ -103,23 +83,6 @@ function normalizeDigits(input: string) {
 }
 function isE164(e164: string) {
   return /^\+\d{8,15}$/.test(e164);
-}
-function formatIntl(cc: string, national: string) {
-  const n = national;
-  if (!n) return `+${cc}`;
-  const parts: string[] = [];
-  let i = 0;
-  while (i < n.length) {
-    const remaining = n.length - i;
-    const take = remaining > 4 ? 3 : remaining;
-    parts.push(n.slice(i, i + take));
-    i += take;
-  }
-  return `+${cc} ${parts.join(" ")}`.trim();
-}
-function flagUrl(iso2: string, size: 24 | 32 | 48 = 24) {
-  const map: Record<number, string> = { 24: "24x18", 32: "32x24", 48: "48x36" };
-  return `https://flagcdn.com/${map[size]}/${iso2}.png`;
 }
 
 /* === localStorage helpers === */
@@ -271,96 +234,7 @@ function CheckboxField({
 }
 
 /** =======================
- *  CountrySelect
- *  ======================= */
-function useOnClickOutside<T extends HTMLElement>(
-  ref: React.RefObject<T> | React.MutableRefObject<T | null>,
-  cb: () => void
-) {
-  useEffect(() => {
-    function handler(e: MouseEvent) {
-      const el = ref.current; // T | null
-      if (!el) return;
-      if (!el.contains(e.target as Node)) cb();
-    }
-    document.addEventListener("mousedown", handler);
-    return () => document.removeEventListener("mousedown", handler);
-  }, [ref, cb]);
-}
-
-function CountrySelect({
-  value,
-  onChange,
-}: {
-  value: Country;
-  onChange: (c: Country) => void;
-}) {
-  const [open, setOpen] = useState(false);
-  const [query, setQuery] = useState("");
-  const boxRef = useRef<HTMLDivElement>(null);
-  useOnClickOutside(boxRef, () => setOpen(false));
-
-  const filtered = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    if (!q) return COUNTRIES;
-    return COUNTRIES.filter(
-      (c) => c.name.toLowerCase().includes(q) || c.dialCode.includes(q) || c.iso2.includes(q)
-    );
-  }, [query]);
-
-  return (
-    <div className="relative" ref={boxRef}>
-      <button
-        type="button"
-        onClick={() => setOpen((o) => !o)}
-        className="w-full rounded-[var(--radius-soft)] bg-[#2A2A2F] pl-3 pr-10 py-3 text-left text-white outline-none ring-1 ring-white/10 focus:ring-[var(--color-primary)]"
-        aria-haspopup="listbox"
-        aria-expanded={open}
-      >
-        <span className="inline-flex items-center gap-2">
-          <img src={flagUrl(value.iso2, 24)} alt={`${value.name} flag`} width={24} height={18} className="rounded-[3px]" />
-          <span className="font-medium">{value.name}</span>
-          <span className="text-[var(--color-muted)]">+{value.dialCode}</span>
-        </span>
-        <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-white/70">▾</span>
-      </button>
-
-      {open && (
-        <div className="absolute z-50 mt-2 w-80 rounded-[var(--radius-soft)] bg-[#1f1f23] p-2 shadow-xl ring-1 ring-white/10" role="listbox">
-          <input
-            autoFocus
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search country or code…"
-            className="mb-2 w-full rounded-[var(--radius-soft)] bg-[#2A2A2F] px-3 py-2 text-sm text-white outline-none ring-1 ring-white/10 focus:ring-[var(--color-primary)]"
-          />
-          <div className="max-h-64 overflow-auto">
-            {filtered.map((c) => (
-              <button
-                key={c.iso2}
-                type="button"
-                onClick={() => { onChange(c); setOpen(false); }}
-                className="flex w-full items-center gap-3 rounded-md px-2 py-2 text-left hover:bg-white/5"
-              >
-                <img src={flagUrl(c.iso2, 24)} alt={`${c.name} flag`} width={24} height={18} className="rounded-[3px] flex-none" />
-                <div className="flex min-w-0 flex-1 items-center justify-between gap-3">
-                  <span className="truncate">{c.name}</span>
-                  <span className="text-sm text-[var(--color-muted)]">+{c.dialCode}</span>
-                </div>
-              </button>
-            ))}
-            {filtered.length === 0 && (
-              <div className="px-2 py-4 text-center text-sm text-[var(--color-muted)]">No matches</div>
-            )}
-          </div>
-        </div>
-      )}
-    </div>
-  );
-}
-
-/** =======================
- *  Phone input
+ *  Phone input (RESPONSIVO + TODOS OS PAÍSES)
  *  ======================= */
 function PhoneNumberField({
   value,
@@ -371,50 +245,57 @@ function PhoneNumberField({
   onChange: (v: string) => void;
   placeholder?: string;
 }) {
-  const initialCountry =
-    COUNTRIES.find((c) => value.startsWith("+" + c.dialCode)) ?? DEFAULT_COUNTRY;
+  const [local, setLocal] = useState<string>(value || "");
 
-  const [country, setCountry] = useState<Country>(initialCountry);
-  const [national, setNational] = useState<string>(() => {
-    if (value.startsWith("+" + country.dialCode)) {
-      return value.slice(1 + country.dialCode.length);
-    }
-    return "";
-  });
+  useEffect(() => {
+    // mantém sincronizado caso venha do LS ou navegação
+    setLocal((prev) => (prev !== value ? (value || "") : prev));
+  }, [value]);
 
-  function emit(cc: Country, nat: string) {
-    const natDigits = normalizeDigits(nat);
-    const e164 = natDigits ? `+${cc.dialCode}${natDigits}` : `+${cc.dialCode}`;
-    onChange(e164);
-  }
-
-  function handleCountryChange(c: Country) {
-    setCountry(c);
-    emit(c, national);
-  }
-
-  function handleNationalChange(input: string) {
-    const cleaned = input.replace(/[^\d ]/g, "");
-    setNational(cleaned);
-    emit(country, cleaned);
-  }
-
-  const preview = formatIntl(country.dialCode, normalizeDigits(national));
-  const example = country.example || placeholder || "";
+  const valid = local ? isValidPhoneNumber(local) : false;
 
   return (
-    <div className="grid grid-cols-[minmax(180px,260px)_1fr] gap-3">
-      <CountrySelect value={country} onChange={handleCountryChange} />
-      <div>
-        <input
-          type="tel"
-          inputMode="tel"
-          value={national}
-          onChange={(e) => handleNationalChange(e.target.value)}
-          placeholder={example}
-          className="w-full rounded-[var(--radius-soft)] bg-[#2A2A2F] px-4 py-3 text-white placeholder:text-[var(--color-muted)] outline-none ring-1 ring-white/10 focus:ring-[var(--color-primary)]"
-        />
-        <div className="mt-2 text-xs text-[var(--color-muted)]">{preview}</div>
+    <div className="w-full">
+      <PhoneInput
+        defaultCountry="gb"          // 🇬🇧 padrão (pode trocar)
+        value={local}
+        onChange={(v) => {
+          const next = v || "";
+          setLocal(next);
+          onChange(next);            // salva em E.164 (ex.: +447... quando válido)
+        }}
+        // Melhora de responsividade: ocupa 100% e adapta o dropdown
+        className="w-full"
+        inputClassName="w-full rounded-[var(--radius-soft)] bg-[#2A2A2F] px-4 py-3 text-white outline-none ring-1 ring-white/10 focus:ring-[var(--color-primary)] placeholder:text-[var(--color-muted)]"
+        countrySelectorStyleProps={{
+          className: "rounded-[var(--radius-soft)] bg-[#2A2A2F] ring-1 ring-white/10",
+          buttonClassName:
+            "h-full w-auto px-3 py-3 text-white hover:bg-white/5 rounded-[var(--radius-soft)]",
+          dropdownArrowClassName:
+            "max-h-72 overflow-auto bg-[#1f1f23] text-white ring-1 ring-white/10 rounded-[var(--radius-soft)]",
+        }}
+        inputProps={{
+          placeholder: placeholder || "Enter your phone number",
+          name: "phone",
+          autoComplete: "tel",
+          "aria-invalid": !!local && !valid,
+        }}
+        forceDialCode
+        showDisabledDialCodeAndPrefix
+        // mobile-friendly
+        
+      />
+
+      <div className="mt-2 text-xs">
+        {local ? (
+          <span className={valid ? "text-emerald-400/90" : "text-red-400/90"}>
+            {valid ? "Valid number" : "Please enter a valid number"}
+          </span>
+        ) : (
+          <span className="text-[var(--color-muted)]">
+            Include country code. Example: +44 7123 456789
+          </span>
+        )}
       </div>
     </div>
   );
@@ -450,8 +331,11 @@ function isAnswerProvided(q: Question, val: AnswerValue, all?: Answers) {
       return false;
     }
 
-    case "phoneNumber":
-      return typeof val === "string" && isE164(val);
+    case "phoneNumber": {
+      if (typeof val !== "string") return false;
+      // garante validade real com libphonenumber
+      return isValidPhoneNumber(val);
+    }
 
     case "email":
       return typeof val === "string" && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val.trim());
@@ -891,7 +775,7 @@ export default function SignupPage() {
 
               {q.type === "phoneNumber" && (
                 <PhoneNumberField
-                  value={(val as string) ?? `+${DEFAULT_COUNTRY.dialCode}`}
+                  value={(val as string) ?? ""}
                   onChange={(v) => setAnswer(q.id, v)}
                   placeholder={q.placeholder}
                 />
