@@ -25,22 +25,22 @@ export default function Home() {
 
       {/* Hero — above the fold */}
       <section className="relative overflow-hidden">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-20 md:grid-cols-2 md:py-28">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-6 md:grid-cols-2 md:py-9">
           <div>
             <h1 className="text-4xl font-bold leading-tight md:text-5xl">
-              Personalised training. Real results.
+              Science Based
               <br />
-              <span className="text-[var(--color-primary)]">Built for Edinburgh.</span>
+              <span className="text-[var(--color-primary)]">Personalised Workout.</span>
             </h1>
             <p className="mt-4 text-lg text-[var(--color-muted)]">
-              Smart workouts that adapt to your time, experience and goals—without the cost of a personal trainer.
+              Smart workouts that adapt to your schedule, experience and goals WITHOUT the cost of a personal trainer.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-4">
               <Link href="/signup" className="btn-primary" aria-label="Join the beta">
                 Join the free Edinburgh beta
               </Link>
               <span className="text-sm text-[var(--color-muted)]">
-                Students of UoE, Napier &amp; Heriot-Watt welcome.
+                Improve your performance now.
               </span>
             </div>
           </div>
@@ -62,15 +62,15 @@ export default function Home() {
 
       {/* Why Ettle (benefits) */}
       <section id="why" className="mx-auto max-w-6xl px-4 py-16">
-        <h2 className="text-2xl font-semibold md:text-3xl">Why you'll choose Ettle</h2>
+        <h2 className="text-2xl font-semibold md:text-3xl">Why choose Ettle...</h2>
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           {[
             {
-              title: "Fits your week",
-              desc: "Tell us your days and session length; we build a plan you can actually keep.",
+              title: "Fits your schedule",
+              desc: "Tell us your days and availability - we build a plan you can actually keep.",
             },
             {
-              title: "Ideal Progress",
+              title: "Planned Progress",
               desc: "Planned progression of training variables to keep you improving.",
             },
             {
@@ -78,12 +78,16 @@ export default function Home() {
               desc: "Clear instructions and videos help you lift confidently from day one.",
             },
             {
-              title: "Motivation that sticks",
-              desc: "Light gamification keeps consistency rewarding—earn XP for showing up.",
+              title: "Have a gym bro",
+              desc: "Match your workout with a friend and train together properly.",
             },
             {
               title: "Swap exercises easily",
-              desc: "Busy gym? Instantly switch to equipment that targets the same muscles.",
+              desc: "Busy gym? We instantly rebuild your session to avoid waiting for equipment.",
+            },
+            {
+              title: "Get payed to train",
+              desc: "As you share the app, we pay you back; and even better: compete fo prizes.",
             },
           ].map((f) => (
             <div key={f.title} className="card">
@@ -101,18 +105,18 @@ export default function Home() {
           {[
             {
               step: "01",
-              title: "Quick onboarding",
+              title: "Quick Onboarding",
               desc: "Level, goals, available days, and time per session.",
             },
             {
               step: "02",
-              title: "Session 0",
-              desc: "Find your 10RM on key lifts to personalise intensity.",
+              title: "Fitness Level",
+              desc: "Find your ideal intensity to personalise your training loads.",
             },
             {
               step: "03",
-              title: "Adaptive plans",
-              desc: "Weekly sessions update as you progress—safe and sustainable.",
+              title: "Ideal Plan and Progression",
+              desc: "Weekly sessions update as you progress&mdash;safe and sustainable.",
             },
           ].map((s) => (
             <div key={s.step} className="card">
@@ -133,7 +137,7 @@ export default function Home() {
               “I finally stuck to 4 days a week while studying at UoE. Clear plans, no guesswork.”
             </blockquote>
             <figcaption className="mt-3 text-sm text-[var(--color-muted)]">
-              — Luiz, Student in Edinburgh
+              &mdash; Luiz, Student in Edinburgh
             </figcaption>
           </figure>
           <figure className="card">
@@ -141,7 +145,7 @@ export default function Home() {
               “Beginner-friendly guidance made the weights area feel safe.”
             </blockquote>
             <figcaption className="mt-3 text-sm text-[var(--color-muted)]">
-              — Amanda, Psychology student
+              &mdash; Amanda, Psychology student
             </figcaption>
           </figure>
         </div>
