@@ -62,7 +62,7 @@ export default function Home() {
 
       {/* Why Ettle (benefits) */}
       <section id="why" className="mx-auto max-w-6xl px-4 py-16">
-        <h2 className="text-2xl font-semibold md:text-3xl">Why people in Edinburgh choose Ettle</h2>
+        <h2 className="text-2xl font-semibold md:text-3xl">Why you'll choose Ettle</h2>
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           {[
             {
@@ -70,16 +70,12 @@ export default function Home() {
               desc: "Tell us your days and session length; we build a plan you can actually keep.",
             },
             {
-              title: "Progresses automatically",
-              desc: "Volume & load scale up based on your completed workouts—no spreadsheets needed.",
+              title: "Ideal Progress",
+              desc: "Planned progression of training variables to keep you improving.",
             },
             {
               title: "Beginner-safe guidance",
               desc: "Clear instructions and videos help you lift confidently from day one.",
-            },
-            {
-              title: "Edinburgh-friendly pricing",
-              desc: "Designed for student budgets—get personal-trainer-level structure for less.",
             },
             {
               title: "Motivation that sticks",

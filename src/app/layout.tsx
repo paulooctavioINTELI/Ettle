@@ -11,6 +11,8 @@ export const metadata: Metadata = {
   description:
     "Ettle creates smart, adaptive workouts for Edinburgh’s students and young professionals. Simple, affordable, effective.",
   keywords: [
+    "Ettle",
+    "Etle",
     "Edinburgh fitness app",
     "workout app Edinburgh",
     "personalised training",
