@@ -25,7 +25,7 @@ export default function Home() {
 
       {/* Hero — above the fold */}
       <section className="relative overflow-hidden">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-6 md:grid-cols-2 md:py-9">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-20 md:grid-cols-2 md:py-28">
           <div>
             <h1 className="text-4xl font-bold leading-tight md:text-5xl">
               Science Based
@@ -84,10 +84,6 @@ export default function Home() {
             {
               title: "Swap exercises easily",
               desc: "Busy gym? We instantly rebuild your session to avoid waiting for equipment.",
-            },
-            {
-              title: "Get payed to train",
-              desc: "As you share the app, we pay you back; and even better: compete fo prizes.",
             },
           ].map((f) => (
             <div key={f.title} className="card">
