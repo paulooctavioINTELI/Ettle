@@ -124,33 +124,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Social proof */}
-      <section id="social" className="mx-auto max-w-6xl px-4 py-16">
-        <h2 className="text-2xl font-semibold md:text-3xl">What locals say</h2>
-        <div className="mt-8 grid gap-6 md:grid-cols-2">
-          <figure className="card">
-            <blockquote className="text-lg">
-              “I finally stuck to 4 days a week while studying at UoE. Clear plans, no guesswork.”
-            </blockquote>
-            <figcaption className="mt-3 text-sm text-[var(--color-muted)]">
-              &mdash; Luiz, Student in Edinburgh
-            </figcaption>
-          </figure>
-          <figure className="card">
-            <blockquote className="text-lg">
-              “Beginner-friendly guidance made the weights area feel safe.”
-            </blockquote>
-            <figcaption className="mt-3 text-sm text-[var(--color-muted)]">
-              &mdash; Amanda, Psychology student
-            </figcaption>
-          </figure>
-        </div>
-        <div className="mt-10 text-center">
-          <Link href="/signup" className="btn-primary" aria-label="Get started now">
-            Get started now
-          </Link>
-        </div>
-      </section>
 
       {/* Footer */}
       <footer className="border-t border-white/5">
