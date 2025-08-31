@@ -1,5 +1,5 @@
 "use client";
-// src/components/PhoneMockup.tsx
+
 import { useRef, useLayoutEffect } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
@@ -9,36 +9,35 @@ gsap.registerPlugin(ScrollTrigger);
 
 function PhoneMockup() {
   const wrapRef = useRef<HTMLDivElement | null>(null);
-  const imgRef = useRef<HTMLImageElement | null>(null);
 
   useLayoutEffect(() => {
-    if (!wrapRef.current || !imgRef.current) return;
+    if (!wrapRef.current) return;
 
     const ctx = gsap.context(() => {
-      // Estado inicial: bem embaixo e invisível
-      gsap.set(imgRef.current, {
+      // Estado inicial no wrapper (não na <Image>)
+      gsap.set(wrapRef.current, {
         y: 300,
         opacity: 0,
         scale: 0.9,
       });
 
-      // Animação de entrada de baixo para cima
-      gsap.to(imgRef.current, {
+      // Animação de entrada
+      gsap.to(wrapRef.current, {
         y: 0,
         opacity: 1,
         scale: 1,
         duration: 1.1,
-        ease: "bounce.out", // efeito de impacto
+        ease: "bounce.out",
       });
 
-      // Efeito extra: quando a seção entra no scroll, reforça o impacto
+      // Impacto extra ao entrar no viewport
       ScrollTrigger.create({
         trigger: wrapRef.current,
         start: "top 80%",
         once: true,
         onEnter: () => {
           gsap.fromTo(
-            imgRef.current,
+            wrapRef.current,
             { y: 200, opacity: 0 },
             { y: 0, opacity: 1, duration: 1.2, ease: "bounce.out" }
           );
@@ -54,7 +53,7 @@ function PhoneMockup() {
       ref={wrapRef}
       className="relative mx-auto w-full max-w-md flex items-center justify-center"
     >
-      {/* Glow laranja forte para dar energia */}
+      {/* Glow laranja */}
       <div
         className="pointer-events-none absolute inset-0 -z-10 blur-3xl"
         aria-hidden
@@ -64,7 +63,6 @@ function PhoneMockup() {
         }}
       />
       <Image
-        ref={imgRef as any}
         src="/mockup-phone.png"
         alt="Ettle app mockup"
         width={300}
