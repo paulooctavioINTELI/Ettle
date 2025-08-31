@@ -1,6 +1,16 @@
+"use client";
+
+import { useRef, useLayoutEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import StickyCTA from "@/components/StickyCTA";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import PhoneMockup from "@/components/PhoneMockup";
+
+gsap.registerPlugin(ScrollTrigger);
+
+/** Componente isolado do mockup com animação GSAP */
 
 export default function Home() {
   return (
@@ -39,24 +49,14 @@ export default function Home() {
               <Link href="/signup" className="btn-primary" aria-label="Join the beta">
                 Join the free Edinburgh beta
               </Link>
-              <span className="text-sm text-[var(--color-muted)]">
-                Improve your performance now.
-              </span>
+              <Link href="/" className="text-sm text-[var(--color-muted)]">
+                Find out more
+              </Link>
             </div>
           </div>
 
-          {/* Visual */}
-          <div className="relative flex items-center justify-center mx-auto w-full max-w-md">
-            <div className="">
-              <Image
-                src="/mockup-phone.png"
-                alt="Ettle app mockup"
-                width={300}
-                height={300}
-                className="h-auto -z-30 rounded-[1rem]"
-              />
-            </div>
-          </div>
+          {/* Visual com GSAP */}
+          <PhoneMockup />
         </div>
       </section>
 
@@ -123,7 +123,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-
 
       {/* Footer */}
       <footer className="border-t border-white/5">
