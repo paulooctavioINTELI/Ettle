@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -41,12 +40,17 @@ function logSbError(where: string, error: PostgrestError | null) {
   });
 }
 
-/* Debounce simples */
-function useDebouncedCallback<T extends (...args: any[]) => void>(fn: T, delay = 400) {
+/* Debounce simples: aceita funções sync/async e mantém tipagem de argumentos */
+function useDebouncedCallback<A extends unknown[]>(
+  fn: (...args: A) => unknown | Promise<unknown>,
+  delay = 400
+) {
   const t = useRef<number | null>(null);
-  return (...args: Parameters<T>) => {
+  return (...args: A) => {
     if (t.current) window.clearTimeout(t.current);
-    t.current = window.setTimeout(() => fn(...args), delay);
+    t.current = window.setTimeout(() => {
+      void fn(...args); // descarta a Promise se for async
+    }, delay);
   };
 }
 
@@ -58,7 +62,6 @@ export default function SignupPage() {
   const [currentId, setCurrentId] = useState<number>(firstId);
   const [history, setHistory] = useState<number[]>(currentId !== -1 ? [currentId] : []);
   const [submitted, setSubmitted] = useState(false);
-  const [submissionId, setSubmissionId] = useState<string>(""); // mantido para possível uso posterior
 
   const currentQuestion = useMemo(() => getQuestionById(QUESTIONS, currentId), [currentId]);
 
@@ -97,7 +100,6 @@ export default function SignupPage() {
           : `${Date.now()}-${Math.random()}`;
       lsSet("ettle_submission_id", sid);
     }
-    setSubmissionId(sid);
   }, [firstId]);
 
   /* ===== persistir consent local + salvar no DB ===== */
@@ -129,7 +131,6 @@ export default function SignupPage() {
 
   // Envia parcial genérico (email/phone continuam cobertos pelo incremental também)
   async function sendPartialIfNeeded(q: Question, val: AnswerValue) {
-    // Se for válido, já cairá no mapSingleAnswerToColumns, mas mantemos compat.
     if (!isAnswerProvided(q, val, answers)) return;
 
     const partial: PartialSignup = {};
@@ -182,11 +183,9 @@ export default function SignupPage() {
       return;
     }
 
-    // Nada de envio final aqui — o incremental já salvou esta e as anteriores.
     const nextId = getNextQuestionId(currentQuestion, val);
 
     if (nextId === -1) {
-      // Como fallback, faz um "consolidado" para garantir consistência
       const finalPayload = mapAnswersToColumns(answers, QUESTIONS);
       const { error } = await supabase
         .from("signup_submissions")
@@ -269,15 +268,17 @@ export default function SignupPage() {
         <ProgressBar progress={progress} enabled={!!consent} />
 
         {!consent ? (
-          <div onChange={(e) => {
-            const target = e.target as HTMLInputElement;
-            if (target?.type === "checkbox") {
-              const checked = target.checked;
-              setConsent(checked);
-              // salvar consent no servidor ao marcar
-              saveConsentIfChecked(checked);
-            }
-          }}>
+          <div
+            onChange={(e) => {
+              const target = e.target as HTMLInputElement;
+              if (target?.type === "checkbox") {
+                const checked = target.checked;
+                setConsent(checked);
+                // salvar consent no servidor ao marcar
+                saveConsentIfChecked(checked);
+              }
+            }}
+          >
             <ConsentCard consent={consent} setConsent={setConsent} />
           </div>
         ) : (

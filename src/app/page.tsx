@@ -1,14 +1,10 @@
 "use client";
 
-import { useRef, useLayoutEffect } from "react";
+// src/app/page.tsx
 import Image from "next/image";
 import Link from "next/link";
 import StickyCTA from "@/components/StickyCTA";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import PhoneMockup from "@/components/PhoneMockup";
-
-gsap.registerPlugin(ScrollTrigger);
 
 /** Componente isolado do mockup com animação GSAP */
 

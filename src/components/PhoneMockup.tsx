@@ -1,5 +1,5 @@
 "use client";
-
+// src/components/PhoneMockup.tsx
 import { useRef, useLayoutEffect } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
