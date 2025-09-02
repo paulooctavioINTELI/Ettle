@@ -323,7 +323,7 @@ export default function PhoneCarousel({
             alt={s.alt || `App screen ${i + 1}`}
             width={screenWidth}
             height={screenHeight}
-            className="absolute left-0 top-0 -z-10 object-cover will-change-transform"
+            className="absolute left-0 top-0 -z-0 object-cover will-change-transform"
             ref={(el) => {
               if (el) slidesRef.current[i] = el;
             }}

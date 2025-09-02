@@ -65,11 +65,19 @@ function PhoneMockup() {
         }}
       />
       <Image
-        src="/mockup-phone.png"
+        src="/mockup-phone.svg"
         alt="Ettle app mockup"
         width={300}
         height={300}
-        className="h-auto rounded-[1rem] will-change-transform drop-shadow-[0_30px_60px_rgba(0,0,0,0.65)]"
+        className="z-10 rounded-[1rem] will-change-transform drop-shadow-[0_30px_60px_rgba(0,0,0,0.65)]"
+        // priority
+      />
+      <Image
+        src="/screens/homeScreen.svg"
+        alt="Ettle app mockup"
+        width={266.95}
+        height={580}
+        className="absolute -z-0 rounded-[1rem] will-change-transform drop-shadow-[0_30px_60px_rgba(0,0,0,0.65)]"
         priority
       />
     </div>
