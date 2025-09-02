@@ -146,8 +146,6 @@ export default function Home() {
           <span>•</span>
           <Link href="/privacy" className="underline">Privacy</Link>
           <span>•</span>
-          <Link href="/terms" className="underline">Terms</Link>
-          <span>•</span>
           {/* Contatos com ícones */}
           <div className="flex gap-4 items-center">
             <a
