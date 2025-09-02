@@ -1,40 +1,58 @@
+// src/app/layout.tsx
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-import 'react-international-phone/style.css';
-
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Ettle — Personalised training for Edinburgh",
+  title: "Ettle — Science-based, personalised workouts",
   description:
-    "Ettle creates smart, adaptive workouts for Edinburgh’s students and young professionals. Simple, affordable, effective.",
-  keywords: [
-    "Ettle",
-    "Etle",
-    "Edinburgh fitness app",
-    "workout app Edinburgh",
-    "personalised training",
-    "student workouts Scotland",
-    "gym plan app",
-  ],
+    "Smart, evidence-based training plans that adapt to your level and routine. Free beta in Edinburgh.",
   applicationName: "Ettle",
+  themeColor: "#181918",
   openGraph: {
-    title: "Ettle — Personalised training for Edinburgh",
+    title: "Ettle — Science-based, personalised workouts",
     description:
-      "Smart, adaptive workouts that fit your time, experience and goals.",
+      "Smart, evidence-based training plans that adapt to your level and routine. Free beta in Edinburgh.",
+    url: "https://ettle.app",
+    siteName: "Ettle",
+    images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "Ettle preview" }],
     type: "website",
-    locale: "en_GB",
   },
-  twitter: { card: "summary_large_image", title: "Ettle" },
-  themeColor: "#181819",
+  twitter: {
+    card: "summary_large_image",
+    title: "Ettle — Science-based, personalised workouts",
+    description:
+      "Smart, evidence-based training plans that adapt to your level and routine. Free beta in Edinburgh.",
+    images: ["/og.jpg"],
+  },
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/manifest.webmanifest",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "Ettle",
+    applicationCategory: "HealthApplication",
+    operatingSystem: "iOS, Android, Web",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "GBP" },
+  };
+
   return (
-    <html lang="en-GB" className="dark">
-      <body className={inter.className}>{children}</body>
+    <html lang="en">
+      <head>
+        <meta name="color-scheme" content="dark" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
+      <body>{children}</body>
     </html>
   );
 }
