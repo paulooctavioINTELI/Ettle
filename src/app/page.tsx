@@ -6,6 +6,7 @@ import HowItWorks from "@/components/landing/HowItWorks";
 import FeaturesSection from "@/components/landing/FeaturesSection";
 import PhoneMockup from "@/components/landing/PhoneMockup";
 import WhyEttle from "@/components/landing/WhyEttle";
+import { FaEnvelope, FaInstagram, FaLinkedin } from "react-icons/fa6";
 
 export default function Home() {
   return (
@@ -121,33 +122,54 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-white/5">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-4 py-10 md:flex-row">
-          <div className="flex items-center gap-3">
-            <Image
-              src="/logo.png"
-              alt="Ettle logo small"
-              width={24}
-              height={24}
-              sizes="24px"
-            />
-            <span className="text-sm text-[var(--color-muted)]">
-              © {new Date().getFullYear()} Ettle
-            </span>
-          </div>
-          <div className="text-sm text-[var(--color-muted)] flex gap-4">
-            <span>Built for Edinburgh</span>
-            <span>•</span>
-            <span>Privacy-friendly</span>
-            <span>•</span>
-            <Link href="/privacy" className="underline">Privacy</Link>
-            <span>•</span>
-            <Link href="/terms" className="underline">Terms</Link>
-            <span>•</span>
-            <Link href="/contact" className="underline">Contact</Link>
+    <footer className="border-t border-white/5">
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-4 py-10 md:flex-row">
+        {/* Logo + ano */}
+        <div className="flex items-center gap-3">
+          <Image
+            src="/logo.png"
+            alt="Ettle logo small"
+            width={24}
+            height={24}
+            sizes="24px"
+          />
+          <span className="text-sm text-[var(--color-muted)]">
+            © {new Date().getFullYear()} Ettle
+          </span>
+        </div>
+
+        {/* Links */}
+        <div className="text-sm text-[var(--color-muted)] flex gap-4 items-center">
+          <span>Built for Edinburgh</span>
+          <span>•</span>
+          <span>Privacy-friendly</span>
+          <span>•</span>
+          <Link href="/privacy" className="underline">Privacy</Link>
+          <span>•</span>
+          <Link href="/terms" className="underline">Terms</Link>
+          <span>•</span>
+          {/* Contatos com ícones */}
+          <div className="flex gap-4 items-center">
+            <a
+              href="mailto:contact@ettle.app"
+              aria-label="Email"
+              className="hover:text-white transition-colors"
+            >
+              <FaEnvelope size={18} />
+            </a>
+            <a
+              href="https://instagram.com/ettle.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="hover:text-white transition-colors"
+            >
+              <FaInstagram size={18} />
+            </a>
           </div>
         </div>
-      </footer>
+      </div>
+    </footer>
 
       {/* Mobile sticky CTA */}
       <StickyCTA />
