@@ -87,87 +87,164 @@ export default function Home() {
 
       {/* How it works (mantido com sua animação) */}
       <HowItWorks />
-      
+
       <FeaturesSection />
 
       {/* FAQ */}
       <section id="faq" className="mx-auto max-w-6xl px-4 py-20">
         <h2 className="text-2xl font-semibold md:text-3xl">FAQ</h2>
-        <div className="mt-8 space-y-6">
-          <div className="card">
-            <h3 className="font-semibold">Is the beta only in Edinburgh?</h3>
-            <p className="text-[var(--color-muted)]">Yes, for now. More cities soon.</p>
+        {/* Extra FAQs */}
+        <details className="card group" data-analytics="faq_q_duration">
+          <summary className="font-semibold cursor-pointer list-none flex items-center justify-between">
+            <span>How long does each workout take?</span>
+            <span className="text-[var(--color-muted)] transition-transform group-open:rotate-180">▾</span>
+          </summary>
+          <div className="mt-2 text-[var(--color-muted)]">
+            Most sessions take 30–45 minutes. Short on time? Choose a 20-minute quick session and keep progressing.
           </div>
-          <div className="card">
-            <h3 className="font-semibold">Do I need a gym membership?</h3>
-            <p className="text-[var(--color-muted)]">Works at the gym or at home — the plan adapts to your setup.</p>
+        </details>
+
+        <details className="card group" data-analytics="faq_q_beginners">
+          <summary className="font-semibold cursor-pointer list-none flex items-center justify-between">
+            <span>Is it good for beginners?</span>
+            <span className="text-[var(--color-muted)] transition-transform group-open:rotate-180">▾</span>
+          </summary>
+          <div className="mt-2 text-[var(--color-muted)]">
+            Yes. Plans adapt to your experience level and start with safe progressions and clear instructions.
           </div>
-          <div className="card">
-            <h3 className="font-semibold">How do I join?</h3>
-            <p className="text-[var(--color-muted)]">
-              Tap <Link href="/signup" className="underline">Join the beta</Link> and complete the form (email & phone).
-            </p>
+        </details>
+
+        <details className="card group" data-analytics="faq_q_equipment">
+          <summary className="font-semibold cursor-pointer list-none flex items-center justify-between">
+            <span>Do I need expensive equipment?</span>
+            <span className="text-[var(--color-muted)] transition-transform group-open:rotate-180">▾</span>
+          </summary>
+          <div className="mt-2 text-[var(--color-muted)]">
+            No. It works with what you have—bodyweight, dumbbells, or full gym. Tell us your setup and we adapt.
           </div>
-        </div>
-        <div className="mt-10">
-          <Link
-            href="/signup"
-            className="btn-primary"
-            aria-label="Join the beta"
-            data-analytics="faq_cta_join_beta"
-          >
-            Join the beta
-          </Link>
-        </div>
+        </details>
+
+        <details className="card group" data-analytics="faq_q_cancel">
+          <summary className="font-semibold cursor-pointer list-none flex items-center justify-between">
+            <span>Can I cancel anytime?</span>
+            <span className="text-[var(--color-muted)] transition-transform group-open:rotate-180">▾</span>
+          </summary>
+          <div className="mt-2 text-[var(--color-muted)]">
+            Yes. Month-to-month billing with no long-term contracts. Cancel in Settings with a couple of taps.
+          </div>
+        </details>
+
+        <details className="card group" data-analytics="faq_q_offline">
+          <summary className="font-semibold cursor-pointer list-none flex items-center justify-between">
+            <span>Does it work offline?</span>
+            <span className="text-[var(--color-muted)] transition-transform group-open:rotate-180">▾</span>
+          </summary>
+          <div className="mt-2 text-[var(--color-muted)]">
+            You can preload your next session and follow it without a connection. Data syncs when you’re back online.
+          </div>
+        </details>
+
+        <details className="card group" data-analytics="faq_q_modalities">
+          <summary className="font-semibold cursor-pointer list-none flex items-center justify-between">
+            <span>Which training styles are included?</span>
+            <span className="text-[var(--color-muted)] transition-transform group-open:rotate-180">▾</span>
+          </summary>
+          <div className="mt-2 text-[var(--color-muted)]">
+            Strength training, hypertrophy, bodyweight, mobility and conditioning. Cardio add-ons are available.
+          </div>
+        </details>
+
+        <details className="card group" data-analytics="faq_q_safety">
+          <summary className="font-semibold cursor-pointer list-none flex items-center justify-between">
+            <span>Is it safe? How do you prevent injuries?</span>
+            <span className="text-[var(--color-muted)] transition-transform group-open:rotate-180">▾</span>
+          </summary>
+          <div className="mt-2 text-[var(--color-muted)]">
+            Each exercise has clear cues and video guidance. Progressions scale load and volume gradually based on your feedback.
+          </div>
+        </details>
+
+        <details className="card group" data-analytics="faq_q_differentiator">
+          <summary className="font-semibold cursor-pointer list-none flex items-center justify-between">
+            <span>What makes Ettle different from other fitness apps?</span>
+            <span className="text-[var(--color-muted)] transition-transform group-open:rotate-180">▾</span>
+          </summary>
+          <div className="mt-2 text-[var(--color-muted)]">
+            Real adaptation (e.g., session difficulty via your inputs), clear technique guidance, and gamification (XP, leaderboards, rewards) that keeps you consistent.
+          </div>
+        </details>
+
+        <details className="card group" data-analytics="faq_q_with_pt">
+          <summary className="font-semibold cursor-pointer list-none flex items-center justify-between">
+            <span>Can I use it alongside my personal trainer?</span>
+            <span className="text-[var(--color-muted)] transition-transform group-open:rotate-180">▾</span>
+          </summary>
+          <div className="mt-2 text-[var(--color-muted)]">
+            Absolutely. Use Ettle to log sessions, track progress and get data-driven insights your coach can use.
+          </div>
+        </details>
+
+        <details className="card group" data-analytics="faq_q_support">
+          <summary className="font-semibold cursor-pointer list-none flex items-center justify-between">
+            <span>How do I get support?</span>
+            <span className="text-[var(--color-muted)] transition-transform group-open:rotate-180">▾</span>
+          </summary>
+          <div className="mt-2 text-[var(--color-muted)]">
+            Email <a href="mailto:contact@ettle.app" className="underline">contact@ettle.app</a> or DM us on{" "}
+            <a href="https://instagram.com/ettle.app" target="_blank" rel="noopener noreferrer" className="underline">Instagram</a>.
+            We usually reply within 24 hours.
+          </div>
+        </details>
+
       </section>
 
       {/* Footer */}
-    <footer className="border-t border-white/5">
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-4 py-10 md:flex-row">
-        {/* Logo + ano */}
-        <div className="flex items-center gap-3">
-          <Image
-            src="/logo.png"
-            alt="Ettle logo small"
-            width={24}
-            height={24}
-            sizes="24px"
-          />
-          <span className="text-sm text-[var(--color-muted)]">
-            © {new Date().getFullYear()} Ettle
-          </span>
-        </div>
+      <footer className="border-t w-full z-50 absolute bg-[var(--color-background)] border-white/5">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-4 py-10 md:flex-row">
+          {/* Logo + ano */}
+          <div className="flex items-center gap-3">
+            <Image
+              src="/logo.png"
+              alt="Ettle logo small"
+              width={24}
+              height={24}
+              sizes="24px"
+            />
+            <span className="text-sm text-[var(--color-muted)]">
+              © {new Date().getFullYear()} Ettle
+            </span>
+          </div>
 
-        {/* Links */}
-        <div className="text-sm text-[var(--color-muted)] flex gap-4 items-center">
-          <span>Built for Edinburgh</span>
-          <span>•</span>
-          <span>Privacy-friendly</span>
-          <span>•</span>
-          <Link href="/privacy" className="underline">Privacy</Link>
-          <span>•</span>
-          {/* Contatos com ícones */}
-          <div className="flex gap-4 items-center">
-            <a
-              href="mailto:contact@ettle.app"
-              aria-label="Email"
-              className="hover:text-white transition-colors"
-            >
-              <FaEnvelope size={18} />
-            </a>
-            <a
-              href="https://instagram.com/ettle.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-              className="hover:text-white transition-colors"
-            >
-              <FaInstagram size={18} />
-            </a>
+          {/* Links */}
+          <div className="text-sm text-[var(--color-muted)] flex gap-4 items-center">
+            <span>Built for Edinburgh</span>
+            <span>•</span>
+            <span>Privacy-friendly</span>
+            <span>•</span>
+            <Link href="/privacy" className="underline">Privacy</Link>
+            <span>•</span>
+            {/* Contatos com ícones */}
+            <div className="flex gap-4 items-center">
+              <a
+                href="mailto:contact@ettle.app"
+                aria-label="Email"
+                className="hover:text-white transition-colors"
+              >
+                <FaEnvelope size={18} />
+              </a>
+              <a
+                href="https://instagram.com/ettle.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="hover:text-white transition-colors"
+              >
+                <FaInstagram size={18} />
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-    </footer>
+      </footer>
 
       {/* Mobile sticky CTA */}
       <StickyCTA />

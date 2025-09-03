@@ -1,1793 +1,1713 @@
 [
-    {
-        "id": 2,
-        "question": "Full Name",
-        "type": "shortAnswer",
-        "choices": null,
-        "placeholder": "e.g., Alex Robertson",
-        "optional": false,
-        "nextQuestion": 3
-    },
-    {
-        "id": 3,
-        "question": "Age (years)",
-        "type": "multipleChoice",
-        "choices": [
-            {
-                "choice": "18 - 21",
-                "nextQuestion": 4
-            },
-            {
-                "choice": "22 - 25",
-                "nextQuestion": 4
-            },
-            {
-                "choice": "26 - 29",
-                "nextQuestion": 4
-            },
-            {
-                "choice": "30 - 33",
-                "nextQuestion": 4
-            },
-            {
-                "choice": "34 - 37",
-                "nextQuestion": 4
-            },
-            {
-                "choice": "38+",
-                "nextQuestion": 4
-            }
-        ],
-        "placeholder": "e.g., 21",
-        "optional": false,
-        "nextQuestion": 4
-    },
-    {
-        "id": 4,
-        "question": "Gender",
-        "type": "multipleChoice",
-        "choices": [
-            {
-                "choice": "Male",
-                "nextQuestion": 5
-            },
-            {
-                "choice": "Female",
-                "nextQuestion": 5
-            },
-            {
-                "choice": "Non-binary",
-                "nextQuestion": 5
-            },
-            {
-                "choice": "Prefer not to say",
-                "nextQuestion": 5
-            },
-            {
-                "choice": "Other",
-                "nextQuestion": 5
-            }
-        ],
-        "placeholder": "",
-        "optional": false,
-        "other": true
-    },
-    {
-        "id": 5,
-        "question": "Contact Email",
-        "type": "email",
-        "choices": null,
-        "placeholder": "name@example.com",
-        "optional": false,
-        "nextQuestion": 6
-    },
-    {
-        "id": 6,
-        "question": "Contact Phone Number",
-        "type": "phoneNumber",
-        "choices": null,
-        "placeholder": "+44 7123 456789",
-        "optional": false,
-        "nextQuestion": 7
-    },
-    {
-        "id": 7,
-        "question": "Nationality",
-        "type": "dropdown",
-        "choices": [
-            {
-                "choice": "Afghan",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Albanian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Algerian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "American",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Andorran",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Angolan",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Anguillan",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Argentine",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Armenian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Australian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Austrian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Azerbaijani",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Bahamian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Bahraini",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Bangladeshi",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Barbadian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Belarusian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Belgian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Belizean",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Beninese",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Bermudian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Bhutanese",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Bolivian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Botswanan",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Brazilian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "British",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "British Virgin Islander",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Bruneian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Bulgarian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Burkinan",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Burmese",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Burundian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Cambodian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Cameroonian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Canadian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Cape Verdean",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Cayman Islander",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Central African",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Chadian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Chilean",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Chinese",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Citizen of Antigua and Barbuda",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Citizen of Bosnia and Herzegovina",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Citizen of Guinea-Bissau",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Citizen of Kiribati",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Citizen of Seychelles",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Citizen of Vanuatu",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Citizen of the Dominican Republic",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Colombian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Comoran",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Congolese (Congo)",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Congolese (DRC)",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Cook Islander",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Costa Rican",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Croatian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Cuban",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Cymraes",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Cymro",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Cypriot",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Czech",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Danish",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Djiboutian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Dominican",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Dutch",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "East Timorese",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Ecuadorean",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Egyptian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Emirati",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "English",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Equatorial Guinean",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Eritrean",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Estonian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Ethiopian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Faroese",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Fijian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Filipino",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Finnish",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "French",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Gabonese",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Gambian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Georgian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "German",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Ghanaian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Gibraltarian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Greek",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Greenlandic",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Grenadian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Guamanian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Guatemalan",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Guinean",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Guyanese",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Haitian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Honduran",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Hong Konger",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Hungarian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Icelandic",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Indian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Indonesian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Iranian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Iraqi",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Irish",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Israeli",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Italian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Ivorian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Jamaican",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Japanese",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Jordanian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Kazakh",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Kenyan",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Kittitian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Kosovan",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Kuwaiti",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Kyrgyz",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Lao",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Latvian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Lebanese",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Liberian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Libyan",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Liechtenstein citizen",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Lithuanian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Luxembourger",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Macanese",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Macedonian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Malagasy",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Malawian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Malaysian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Maldivian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Malian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Maltese",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Marshallese",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Martiniquais",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Mauritanian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Mauritian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Mexican",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Micronesian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Moldovan",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Monegasque",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Mongolian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Montenegrin",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Montserratian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Moroccan",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Mosotho",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Mozambican",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Namibian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Nauruan",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Nepalese",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "New Zealander",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Nicaraguan",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Nigerian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Nigerien",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Niuean",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "North Korean",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Northern Irish",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Norwegian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Omani",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Pakistani",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Palauan",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Palestinian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Panamanian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Papua New Guinean",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Paraguayan",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Peruvian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Pitcairn Islander",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Polish",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Portuguese",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Prydeinig",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Puerto Rican",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Qatari",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Romanian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Russian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Rwandan",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Salvadorean",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Sammarinese",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Samoan",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Sao Tomean",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Saudi Arabian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Scottish",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Senegalese",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Serbian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Sierra Leonean",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Singaporean",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Slovak",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Slovenian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Solomon Islander",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Somali",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "South African",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "South Korean",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "South Sudanese",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Spanish",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Sri Lankan",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "St Helenian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "St Lucian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Stateless",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Sudanese",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Surinamese",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Swazi",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Swedish",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Swiss",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Syrian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Taiwanese",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Tajik",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Tanzanian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Thai",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Togolese",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Tongan",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Trinidadian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Tristanian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Tunisian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Turkish",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Turkmen",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Turks and Caicos Islander",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Tuvaluan",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Ugandan",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Ukrainian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Uruguayan",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Uzbek",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Vatican citizen",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Venezuelan",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Vietnamese",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Vincentian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Wallisian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Welsh",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Yemeni",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Zambian",
-                "nextQuestion": 8
-            },
-            {
-                "choice": "Zimbabwean",
-                "nextQuestion": 8
-            }
-        ],
-        "placeholder": "Select your nationality",
-        "optional": false,
-        "other": true
-    },
-    {
-        "id": 8,
-        "question": "Please select your current employment status",
-        "type": "multipleChoice",
-        "choices": [
-            {
-                "choice": "Student",
-                "nextQuestion": 10
-            },
-            {
-                "choice": "Employed full-time",
-                "nextQuestion": 10
-            },
-            {
-                "choice": "Employed part-time",
-                "nextQuestion": 10
-            },
-            {
-                "choice": "Self-employed",
-                "nextQuestion": 10
-            },
-            {
-                "choice": "Unemployed",
-                "nextQuestion": 10
-            },
-            {
-                "choice": "Prefer not to say",
-                "nextQuestion": 10
-            },
-            {
-                "choice": "Other",
-                "nextQuestion": 10
-            }
-        ],
-        "placeholder": "",
-        "optional": false,
-        "other": true
-    },
-    {
-        "id": 10,
-        "question": "Current activity level",
-        "type": "multipleChoice",
-        "choices": [
-            {
-                "choice": "Sedentary (Little or no exercise)",
-                "nextQuestion": 11
-            },
-            {
-                "choice": "Lightly active (1–3 days/week)",
-                "nextQuestion": 11
-            },
-            {
-                "choice": "Moderately active (3–5 days/week)",
-                "nextQuestion": 11
-            },
-            {
-                "choice": "Very active (6–7 days/week)",
-                "nextQuestion": 11
-            },
-            {
-                "choice": "Athlete (Multiple sessions/day)",
-                "nextQuestion": 11
-            }
-        ],
-        "placeholder": "",
-        "optional": false
-    },
-    {
-        "id": 11,
-        "question": "Primary fitness goal",
-        "type": "multipleChoice",
-        "choices": [
-            {
-                "choice": "Weight loss",
-                "nextQuestion": 12
-            },
-            {
-                "choice": "Muscle gain",
-                "nextQuestion": 12
-            },
-            {
-                "choice": "Endurance / stamina",
-                "nextQuestion": 12
-            },
-            {
-                "choice": "General fitness & health",
-                "nextQuestion": 12
-            },
-            {
-                "choice": "Sports performance",
-                "nextQuestion": 12
-            },
-            {
-                "choice": "Other",
-                "nextQuestion": 12
-            }
-        ],
-        "placeholder": "",
-        "optional": false,
-        "other": true
-    },
-    {
-        "id": 12,
-        "question": "Preferred training environment",
-        "type": "multipleChoice",
-        "choices": [
-            {
-                "choice": "Gym",
-                "nextQuestion": 13
-            },
-            {
-                "choice": "Home",
-                "nextQuestion": 13
-            },
-            {
-                "choice": "Outdoor",
-                "nextQuestion": 13
-            },
-            {
-                "choice": "Mixed / Flexible",
-                "nextQuestion": 13
-            }
-        ],
-        "placeholder": "",
-        "optional": false
-    },
-    {
-        "id": 13,
-        "question": "How long have you been consistently weight training?",
-        "type": "multipleChoice",
-        "choices": [
-            {
-                "choice": "I have not engaged in weight training before",
-                "nextQuestion": 14
-            },
-            {
-                "choice": "Less than 6 months",
-                "nextQuestion": 14
-            },
-            {
-                "choice": "6–12 months",
-                "nextQuestion": 14
-            },
-            {
-                "choice": "1–3 years",
-                "nextQuestion": 14
-            },
-            {
-                "choice": "More than 3 years",
-                "nextQuestion": 14
-            }
-        ],
-        "placeholder": "",
-        "optional": false
-    },
-    {
-        "id": 14,
-        "question": "What has been your greatest challenge in progressing toward your fitness goals?",
-        "type": "multipleChoice",
-        "choices": [
-            {
-                "choice": "Maintaining consistency",
-                "nextQuestion": 15
-            },
-            {
-                "choice": "Finding sufficient time to train",
-                "nextQuestion": 15
-            },
-            {
-                "choice": "Staying motivated",
-                "nextQuestion": 15
-            },
-            {
-                "choice": "Knowing which exercises or programmes to follow",
-                "nextQuestion": 15
-            },
-            {
-                "choice": "Nutrition and diet management",
-                "nextQuestion": 15
-            },
-            {
-                "choice": "Injury or health-related setbacks",
-                "nextQuestion": 15
-            },
-            {
-                "choice": "Other",
-                "nextQuestion": 15
-            }
-        ],
-        "placeholder": "",
-        "optional": false,
-        "other": true
-    },
-    {
-        "id": 15,
-        "question": "Please provide more details if you wish",
-        "type": "paragraph",
-        "choices": null,
-        "placeholder": "Optional details…",
-        "optional": true,
-        "nextQuestion": 16
-    },
-    {
-        "id": 16,
-        "question": "Have you participated in sports other than weight training, either currently or in the past?",
-        "type": "multipleChoice",
-        "choices": [
-            {
-                "choice": "Yes",
-                "nextQuestion": 17
-            },
-            {
-                "choice": "No",
-                "nextQuestion": 19
-            }
-        ],
-        "placeholder": "",
-        "optional": false
-    },
-    {
-        "id": 17,
-        "question": "Which sports?",
-        "type": "shortAnswer",
-        "choices": null,
-        "placeholder": "e.g., football, rugby, swimming…",
-        "optional": false,
-        "nextQuestion": 18
-    },
-    {
-        "id": 18,
-        "question": "If yes, where did you practice this sports?",
-        "type": "multipleChoice",
-        "choices": [
-            {
-                "choice": "University team",
-                "nextQuestion": 19
-            },
-            {
-                "choice": "University society",
-                "nextQuestion": 19
-            },
-            {
-                "choice": "Private sport club",
-                "nextQuestion": 19
-            },
-            {
-                "choice": "Other",
-                "nextQuestion": 19
-            }
-        ],
-        "other": true,
-        "placeholder": "",
-        "optional": false
-    },
-    {
-        "id": 19,
-        "question": "Have you worked with a personal trainer, either currently or in the past?",
-        "type": "multipleChoice",
-        "choices": [
-            {
-                "choice": "Yes, currently",
-                "nextQuestion": 20
-            },
-            {
-                "choice": "Yes, in the past",
-                "nextQuestion": 24
-            },
-            {
-                "choice": "No",
-                "nextQuestion": 26
-            }
-        ],
-        "placeholder": "",
-        "optional": false
-    },
-    {
-        "id": 20,
-        "question": "What benefits have you experienced?",
-        "type": "checkbox",
-        "choices": [
-            {
-                "choice": "Improved exercise technique",
-                "nextQuestion": 21
-            },
-            {
-                "choice": "Increased motivation",
-                "nextQuestion": 21
-            },
-            {
-                "choice": "Faster progress towards goals",
-                "nextQuestion": 21
-            },
-            {
-                "choice": "Accountability and structure",
-                "nextQuestion": 21
-            },
-            {
-                "choice": "Reduced injury risk",
-                "nextQuestion": 21
-            },
-            {
-                "choice": "Other",
-                "nextQuestion": 21
-            }
-        ],
-        "placeholder": "",
-        "optional": false,
-        "other": true
-    },
-    {
-        "id": 21,
-        "question": "Please provide more details if you wish (benefits)",
-        "type": "paragraph",
-        "choices": null,
-        "placeholder": "Optional details…",
-        "optional": true,
-        "nextQuestion": 22
-    },
-    {
-        "id": 22,
-        "question": "What challenges have you encountered?",
-        "type": "checkbox",
-        "choices": [
-            {
-                "choice": "Cost of sessions",
-                "nextQuestion": 23
-            },
-            {
-                "choice": "Scheduling conflicts",
-                "nextQuestion": 23
-            },
-            {
-                "choice": "Trainer compatibility",
-                "nextQuestion": 23
-            },
-            {
-                "choice": "Lack of desired progress",
-                "nextQuestion": 23
-            },
-            {
-                "choice": "Other",
-                "nextQuestion": 23
-            }
-        ],
-        "placeholder": "",
-        "optional": false,
-        "other": true
-    },
-    {
-        "id": 23,
-        "question": "Please provide more details if you wish (challenges)",
-        "type": "paragraph",
-        "choices": null,
-        "placeholder": "Optional details…",
-        "optional": true,
-        "nextQuestion": 28
-    },
-    {
-        "id": 24,
-        "question": "Why did you stop working with a trainer?",
-        "type": "checkbox",
-        "choices": [
-            {
-                "choice": "Cost",
-                "nextQuestion": 25
-            },
-            {
-                "choice": "Time constraints",
-                "nextQuestion": 25
-            },
-            {
-                "choice": "Achieved goals",
-                "nextQuestion": 25
-            },
-            {
-                "choice": "Relocated",
-                "nextQuestion": 25
-            },
-            {
-                "choice": "Did not enjoy the service",
-                "nextQuestion": 25
-            },
-            {
-                "choice": "Other",
-                "nextQuestion": 25
-            }
-        ],
-        "placeholder": "",
-        "optional": false,
-        "other": true
-    },
-    {
-        "id": 25,
-        "question": "Please provide more details if you wish (reasons for stopping)",
-        "type": "paragraph",
-        "choices": null,
-        "placeholder": "Optional details…",
-        "optional": true,
-        "nextQuestion": 41
-    },
-    {
-        "id": 41,
-        "question": "What benefits have you experienced?",
-        "type": "checkbox",
-        "choices": [
-            {
-                "choice": "Improved exercise technique",
-                "nextQuestion": 42
-            },
-            {
-                "choice": "Increased motivation",
-                "nextQuestion": 42
-            },
-            {
-                "choice": "Faster progress towards goals",
-                "nextQuestion": 42
-            },
-            {
-                "choice": "Accountability and structure",
-                "nextQuestion": 42
-            },
-            {
-                "choice": "Reduced injury risk",
-                "nextQuestion": 42
-            },
-            {
-                "choice": "Other",
-                "nextQuestion": 42
-            }
-        ],
-        "placeholder": "",
-        "optional": false,
-        "other": true
-    },
-    {
-        "id": 42,
-        "question": "Please provide more details if you wish (reasons for stopping)",
-        "type": "paragraph",
-        "choices": null,
-        "placeholder": "Optional details…",
-        "optional": true,
-        "nextQuestion": 28
-    },
-    {
-        "id": 26,
-        "question": "Would you consider working with a personal trainer in the future?",
-        "type": "multipleChoice",
-        "choices": [
-            {
-                "choice": "Yes",
-                "nextQuestion": 27
-            },
-            {
-                "choice": "No",
-                "nextQuestion": 27
-            }
-        ],
-        "placeholder": "",
-        "optional": false
-    },
-    {
-        "id": 27,
-        "question": "Please provide more details if you wish (personal trainer)",
-        "type": "paragraph",
-        "choices": null,
-        "placeholder": "Optional details…",
-        "optional": true,
-        "nextQuestion": 28
-    },
-    {
-        "id": 28,
-        "question": "Have you previously used any fitness or training apps?",
-        "type": "multipleChoice",
-        "choices": [
-            {
-                "choice": "Yes",
-                "nextQuestion": 29
-            },
-            {
-                "choice": "No",
-                "nextQuestion": 33
-            }
-        ],
-        "placeholder": "",
-        "optional": false
-    },
-    {
-        "id": 29,
-        "question": "Which applications have you used?",
-        "type": "shortAnswer",
-        "choices": null,
-        "placeholder": "List app names…",
-        "optional": false,
-        "nextQuestion": 30
-    },
-    {
-        "id": 30,
-        "question": "What could be improved?",
-        "type": "checkbox",
-        "choices": [
-            {
-                "choice": "More personalised workout plans",
-                "nextQuestion": 31
-            },
-            {
-                "choice": "Better integration with wearables",
-                "nextQuestion": 31
-            },
-            {
-                "choice": "Improved nutritional guidance and meal planning",
-                "nextQuestion": 31
-            },
-            {
-                "choice": "Clearer exercise demonstrations or video quality",
-                "nextQuestion": 31
-            },
-            {
-                "choice": "More accurate progress tracking and analytics",
-                "nextQuestion": 31
-            },
-            {
-                "choice": "Increased variety of workouts/programmes",
-                "nextQuestion": 31
-            },
-            {
-                "choice": "Better customer support / coaching interaction",
-                "nextQuestion": 31
-            },
-            {
-                "choice": "More affordable pricing / better value",
-                "nextQuestion": 31
-            },
-            {
-                "choice": "Offline access to content",
-                "nextQuestion": 31
-            },
-            {
-                "choice": "Other",
-                "nextQuestion": 31
-            }
-        ],
-        "placeholder": "",
-        "optional": false,
-        "other": true
-    },
-    {
-        "id": 31,
-        "question": "Please provide more details if you wish (fitness apps)",
-        "type": "paragraph",
-        "choices": null,
-        "placeholder": "Optional details…",
-        "optional": true,
-        "nextQuestion": 32
-    },
-    {
-        "id": 33,
-        "question": "Would you consider subscribing to a fitness app?",
-        "type": "multipleChoice",
-        "choices": [
-            {
-                "choice": "Yes",
-                "nextQuestion": 34
-            },
-            {
-                "choice": "No",
-                "nextQuestion": 34
-            }
-        ],
-        "placeholder": "",
-        "optional": false
-    },
-    {
-        "id": 34,
-        "question": "Which features would be most important to you?",
-        "type": "checkbox",
-        "choices": [
-            {
-                "choice": "Personalised workout plans tailored to my goals",
-                "nextQuestion": 35
-            },
-            {
-                "choice": "Step-by-step video exercise demonstrations",
-                "nextQuestion": 35
-            },
-            {
-                "choice": "Nutrition guidance and meal planning tools",
-                "nextQuestion": 35
-            },
-            {
-                "choice": "Progress tracking and performance analytics",
-                "nextQuestion": 35
-            },
-            {
-                "choice": "Integration with wearable devices",
-                "nextQuestion": 35
-            },
-            {
-                "choice": "Gamification features (challenges, rewards)",
-                "nextQuestion": 35
-            },
-            {
-                "choice": "Access to virtual or live coaching sessions",
-                "nextQuestion": 35
-            },
-            {
-                "choice": "Community support or social features",
-                "nextQuestion": 35
-            },
-            {
-                "choice": "Affordable subscription pricing",
-                "nextQuestion": 35
-            },
-            {
-                "choice": "Ability to train anywhere (gym/home/outdoor)",
-                "nextQuestion": 35
-            },
-            {
-                "choice": "Offline access to workouts",
-                "nextQuestion": 35
-            },
-            {
-                "choice": "Other",
-                "nextQuestion": 35
-            }
-        ],
-        "placeholder": "",
-        "optional": false,
-        "other": true
-    },
-    {
-        "id": 35,
-        "question": "Please provide more details if you wish (features)",
-        "type": "paragraph",
-        "choices": null,
-        "placeholder": "Optional details…",
-        "optional": true,
-        "nextQuestion": 32
-    },
-    {
-        "id": 32,
-        "question": "Based on the features and services you value, what monthly subscription price would you consider reasonable?",
-        "type": "multipleChoice",
-        "choices": [
-            {
-                "choice": "Under £5 per month",
-                "nextQuestion": 36
-            },
-            {
-                "choice": "£5–£9.99 per month",
-                "nextQuestion": 36
-            },
-            {
-                "choice": "£10–£14.99 per month",
-                "nextQuestion": 36
-            },
-            {
-                "choice": "£15–£19.99 per month",
-                "nextQuestion": 36
-            },
-            {
-                "choice": "£20 or more per month",
-                "nextQuestion": 36
-            },
-            {
-                "choice": "I would only use a free version",
-                "nextQuestion": 36
-            },
-            {
-                "choice": "Other",
-                "nextQuestion": 36
-            }
-        ],
-        "placeholder": "",
-        "optional": false,
-        "other": true
-    },
-    {
-        "id": 36,
-        "question": "Do you currently have, or have you previously experienced, any injuries or medical conditions that could affect your training?",
-        "type": "multipleChoice",
-        "choices": [
-            {
-                "choice": "Yes, minor (does not currently limit training)",
-                "nextQuestion": 37
-            },
-            {
-                "choice": "Yes, moderate/severe (limits or modifies training)",
-                "nextQuestion": 37
-            },
-            {
-                "choice": "No",
-                "nextQuestion": 37
-            },
-            {
-                "choice": "Prefer not to say",
-                "nextQuestion": 37
-            }
-        ],
-        "placeholder": "",
-        "optional": false
-    },
-    {
-        "id": 37,
-        "question": "Are you currently taking any medication that may impact your ability to exercise?",
-        "type": "multipleChoice",
-        "choices": [
-            {
-                "choice": "Yes",
-                "nextQuestion": 38
-            },
-            {
-                "choice": "No",
-                "nextQuestion": 38
-            },
-            {
-                "choice": "Prefer not to say",
-                "nextQuestion": 38
-            }
-        ],
-        "placeholder": "",
-        "optional": false
-    },
-    {
-        "id": 38,
-        "question": "Do you have any physical limitations or disabilities we should take into consideration when creating your programme?",
-        "type": "multipleChoice",
-        "choices": [
-            {
-                "choice": "Yes, mobility limitations",
-                "nextQuestion": 39
-            },
-            {
-                "choice": "Yes, strength limitations",
-                "nextQuestion": 39
-            },
-            {
-                "choice": "Yes, endurance limitations",
-                "nextQuestion": 39
-            },
-            {
-                "choice": "No",
-                "nextQuestion": 39
-            },
-            {
-                "choice": "Other",
-                "nextQuestion": 39
-            },
-            {
-                "choice": "Prefer not to say",
-                "nextQuestion": 39
-            }
-        ],
-        "placeholder": "",
-        "optional": false,
-        "other": true
-    },
-    {
-        "id": 39,
-        "question": "Would you like to be among the first to try the Ettle Fitness App when our MVP launches?",
-        "type": "multipleChoice",
-        "choices": [
-            {
-                "choice": "Yes, I would like early access and agree to be contacted via email for updates and onboarding instructions",
-                "nextQuestion": 40
-            },
-            {
-                "choice": "Maybe, please send me more information before I decide",
-                "nextQuestion": 40
-            },
-            {
-                "choice": "No, I am not interested in early access",
-                "nextQuestion": -1
-            }
-        ],
-        "placeholder": "",
-        "optional": false
-    },
-    {
-        "id": 40,
-        "question": "Marketing Opt-In",
-        "type": "checkbox",
-        "choices": [
-            {
-                "choice": "Yes, I would like to receive updates, offers, and news from Ettle Fitness App by email. I understand I can unsubscribe at any time.",
-                "nextQuestion": -1
-            }
-        ],
-        "placeholder": "",
-        "optional": true
-    }
+   {
+       "id": 2,
+       "question": "Full Name",
+       "type": "shortAnswer",
+       "choices": null,
+       "placeholder": "e.g., Alex Robertson",
+       "optional": false,
+       "nextQuestion": 3
+   },
+   {
+       "id": 3,
+       "question": "Age (years)",
+       "type": "multipleChoice",
+       "choices": [
+           {
+               "choice": "18 - 21",
+               "nextQuestion": 4
+           },
+           {
+               "choice": "22 - 25",
+               "nextQuestion": 4
+           },
+           {
+               "choice": "26 - 29",
+               "nextQuestion": 4
+           },
+           {
+               "choice": "30 - 33",
+               "nextQuestion": 4
+           },
+           {
+               "choice": "34 - 37",
+               "nextQuestion": 4
+           },
+           {
+               "choice": "38+",
+               "nextQuestion": 4
+           }
+       ],
+       "placeholder": "e.g., 21",
+       "optional": false,
+       "nextQuestion": 4
+   },
+   {
+       "id": 4,
+       "question": "Gender",
+       "type": "multipleChoice",
+       "choices": [
+           {
+               "choice": "Male",
+               "nextQuestion": 5
+           },
+           {
+               "choice": "Female",
+               "nextQuestion": 5
+           },
+           {
+               "choice": "Non-binary",
+               "nextQuestion": 5
+           },
+           {
+               "choice": "Prefer not to say",
+               "nextQuestion": 5
+           },
+           {
+               "choice": "Other",
+               "nextQuestion": 5
+           }
+       ],
+       "placeholder": "",
+       "optional": false,
+       "other": true
+   },
+   {
+       "id": 5,
+       "question": "Contact Email",
+       "type": "email",
+       "choices": null,
+       "placeholder": "name@example.com",
+       "optional": false,
+       "nextQuestion": 6
+   },
+   {
+       "id": 6,
+       "question": "Contact Phone Number",
+       "type": "phoneNumber",
+       "choices": null,
+       "placeholder": "+44 7123 456789",
+       "optional": false,
+       "nextQuestion": 7
+   },
+   {
+       "id": 7,
+       "question": "Nationality",
+       "type": "dropdown",
+       "choices": [
+           {
+               "choice": "Afghan",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Albanian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Algerian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "American",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Andorran",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Angolan",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Anguillan",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Argentine",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Armenian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Australian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Austrian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Azerbaijani",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Bahamian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Bahraini",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Bangladeshi",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Barbadian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Belarusian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Belgian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Belizean",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Beninese",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Bermudian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Bhutanese",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Bolivian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Botswanan",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Brazilian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "British",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "British Virgin Islander",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Bruneian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Bulgarian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Burkinan",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Burmese",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Burundian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Cambodian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Cameroonian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Canadian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Cape Verdean",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Cayman Islander",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Central African",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Chadian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Chilean",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Chinese",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Citizen of Antigua and Barbuda",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Citizen of Bosnia and Herzegovina",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Citizen of Guinea-Bissau",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Citizen of Kiribati",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Citizen of Seychelles",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Citizen of Vanuatu",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Citizen of the Dominican Republic",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Colombian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Comoran",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Congolese (Congo)",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Congolese (DRC)",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Cook Islander",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Costa Rican",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Croatian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Cuban",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Cymraes",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Cymro",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Cypriot",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Czech",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Danish",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Djiboutian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Dominican",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Dutch",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "East Timorese",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Ecuadorean",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Egyptian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Emirati",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "English",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Equatorial Guinean",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Eritrean",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Estonian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Ethiopian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Faroese",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Fijian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Filipino",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Finnish",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "French",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Gabonese",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Gambian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Georgian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "German",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Ghanaian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Gibraltarian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Greek",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Greenlandic",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Grenadian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Guamanian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Guatemalan",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Guinean",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Guyanese",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Haitian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Honduran",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Hong Konger",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Hungarian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Icelandic",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Indian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Indonesian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Iranian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Iraqi",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Irish",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Israeli",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Italian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Ivorian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Jamaican",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Japanese",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Jordanian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Kazakh",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Kenyan",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Kittitian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Kosovan",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Kuwaiti",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Kyrgyz",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Lao",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Latvian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Lebanese",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Liberian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Libyan",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Liechtenstein citizen",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Lithuanian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Luxembourger",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Macanese",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Macedonian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Malagasy",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Malawian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Malaysian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Maldivian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Malian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Maltese",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Marshallese",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Martiniquais",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Mauritanian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Mauritian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Mexican",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Micronesian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Moldovan",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Monegasque",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Mongolian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Montenegrin",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Montserratian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Moroccan",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Mosotho",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Mozambican",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Namibian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Nauruan",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Nepalese",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "New Zealander",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Nicaraguan",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Nigerian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Nigerien",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Niuean",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "North Korean",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Northern Irish",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Norwegian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Omani",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Pakistani",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Palauan",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Palestinian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Panamanian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Papua New Guinean",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Paraguayan",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Peruvian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Pitcairn Islander",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Polish",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Portuguese",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Prydeinig",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Puerto Rican",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Qatari",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Romanian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Russian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Rwandan",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Salvadorean",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Sammarinese",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Samoan",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Sao Tomean",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Saudi Arabian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Scottish",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Senegalese",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Serbian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Sierra Leonean",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Singaporean",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Slovak",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Slovenian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Solomon Islander",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Somali",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "South African",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "South Korean",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "South Sudanese",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Spanish",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Sri Lankan",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "St Helenian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "St Lucian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Stateless",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Sudanese",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Surinamese",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Swazi",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Swedish",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Swiss",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Syrian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Taiwanese",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Tajik",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Tanzanian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Thai",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Togolese",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Tongan",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Trinidadian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Tristanian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Tunisian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Turkish",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Turkmen",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Turks and Caicos Islander",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Tuvaluan",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Ugandan",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Ukrainian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Uruguayan",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Uzbek",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Vatican citizen",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Venezuelan",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Vietnamese",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Vincentian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Wallisian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Welsh",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Yemeni",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Zambian",
+               "nextQuestion": 8
+           },
+           {
+               "choice": "Zimbabwean",
+               "nextQuestion": 8
+           }
+       ],
+       "placeholder": "Select your nationality",
+       "optional": false,
+       "other": true
+   },
+   {
+       "id": 8,
+       "question": "Please select your current employment status",
+       "type": "multipleChoice",
+       "choices": [
+           {
+               "choice": "Student",
+               "nextQuestion": 10
+           },
+           {
+               "choice": "Employed full-time",
+               "nextQuestion": 10
+           },
+           {
+               "choice": "Employed part-time",
+               "nextQuestion": 10
+           },
+           {
+               "choice": "Self-employed",
+               "nextQuestion": 10
+           },
+           {
+               "choice": "Unemployed",
+               "nextQuestion": 10
+           },
+           {
+               "choice": "Prefer not to say",
+               "nextQuestion": 10
+           },
+           {
+               "choice": "Other",
+               "nextQuestion": 10
+           }
+       ],
+       "placeholder": "",
+       "optional": false,
+       "other": true
+   },
+   {
+       "id": 10,
+       "question": "Current activity level",
+       "type": "multipleChoice",
+       "choices": [
+           {
+               "choice": "Sedentary (Little or no exercise)",
+               "nextQuestion": 11
+           },
+           {
+               "choice": "Lightly active (1–3 days/week)",
+               "nextQuestion": 11
+           },
+           {
+               "choice": "Moderately active (3–5 days/week)",
+               "nextQuestion": 11
+           },
+           {
+               "choice": "Very active (6–7 days/week)",
+               "nextQuestion": 11
+           },
+           {
+               "choice": "Athlete (Multiple sessions/day)",
+               "nextQuestion": 11
+           }
+       ],
+       "placeholder": "",
+       "optional": false
+   },
+   {
+       "id": 11,
+       "question": "Primary fitness goal",
+       "type": "multipleChoice",
+       "choices": [
+           {
+               "choice": "Weight loss",
+               "nextQuestion": 12
+           },
+           {
+               "choice": "Muscle gain",
+               "nextQuestion": 12
+           },
+           {
+               "choice": "Endurance / stamina",
+               "nextQuestion": 12
+           },
+           {
+               "choice": "General fitness & health",
+               "nextQuestion": 12
+           },
+           {
+               "choice": "Sports performance",
+               "nextQuestion": 12
+           },
+           {
+               "choice": "Other",
+               "nextQuestion": 12
+           }
+       ],
+       "placeholder": "",
+       "optional": false,
+       "other": true
+   },
+   {
+       "id": 12,
+       "question": "Preferred training environment",
+       "type": "multipleChoice",
+       "choices": [
+           {
+               "choice": "Gym",
+               "nextQuestion": 13
+           },
+           {
+               "choice": "Home",
+               "nextQuestion": 13
+           },
+           {
+               "choice": "Outdoor",
+               "nextQuestion": 13
+           },
+           {
+               "choice": "Mixed / Flexible",
+               "nextQuestion": 13
+           }
+       ],
+       "placeholder": "",
+       "optional": false
+   },
+   {
+       "id": 13,
+       "question": "How long have you been consistently weight training?",
+       "type": "multipleChoice",
+       "choices": [
+           {
+               "choice": "I have not engaged in weight training before",
+               "nextQuestion": 14
+           },
+           {
+               "choice": "Less than 6 months",
+               "nextQuestion": 14
+           },
+           {
+               "choice": "6–12 months",
+               "nextQuestion": 14
+           },
+           {
+               "choice": "1–3 years",
+               "nextQuestion": 14
+           },
+           {
+               "choice": "More than 3 years",
+               "nextQuestion": 14
+           }
+       ],
+       "placeholder": "",
+       "optional": false
+   },
+   {
+       "id": 14,
+       "question": "What has been your greatest challenge in progressing toward your fitness goals?",
+       "type": "multipleChoice",
+       "choices": [
+           {
+               "choice": "Maintaining consistency",
+               "nextQuestion": 15
+           },
+           {
+               "choice": "Finding sufficient time to train",
+               "nextQuestion": 15
+           },
+           {
+               "choice": "Staying motivated",
+               "nextQuestion": 15
+           },
+           {
+               "choice": "Knowing which exercises or programmes to follow",
+               "nextQuestion": 15
+           },
+           {
+               "choice": "Nutrition and diet management",
+               "nextQuestion": 15
+           },
+           {
+               "choice": "Injury or health-related setbacks",
+               "nextQuestion": 15
+           },
+           {
+               "choice": "Other",
+               "nextQuestion": 15
+           }
+       ],
+       "placeholder": "",
+       "optional": false,
+       "other": true
+   },
+   {
+       "id": 15,
+       "question": "Please provide more details if you wish",
+       "type": "paragraph",
+       "choices": null,
+       "placeholder": "Optional details…",
+       "optional": true,
+       "nextQuestion": 19
+   },
+
+
+   {
+       "id": 19,
+       "question": "Have you worked with a personal trainer, either currently or in the past?",
+       "type": "multipleChoice",
+       "choices": [
+           {
+               "choice": "Yes, currently",
+               "nextQuestion": 20
+           },
+           {
+               "choice": "Yes, in the past",
+               "nextQuestion": 24
+           },
+           {
+               "choice": "No",
+               "nextQuestion": 28
+           }
+       ],
+       "placeholder": "",
+       "optional": false
+   },
+   {
+       "id": 20,
+       "question": "What benefits have you experienced?",
+       "type": "checkbox",
+       "choices": [
+           {
+               "choice": "Improved exercise technique",
+               "nextQuestion": 21
+           },
+           {
+               "choice": "Increased motivation",
+               "nextQuestion": 21
+           },
+           {
+               "choice": "Faster progress towards goals",
+               "nextQuestion": 21
+           },
+           {
+               "choice": "Accountability and structure",
+               "nextQuestion": 21
+           },
+           {
+               "choice": "Reduced injury risk",
+               "nextQuestion": 21
+           },
+           {
+               "choice": "Other",
+               "nextQuestion": 21
+           }
+       ],
+       "placeholder": "",
+       "optional": false,
+       "other": true
+   },
+   {
+       "id": 21,
+       "question": "Please provide more details if you wish (benefits)",
+       "type": "paragraph",
+       "choices": null,
+       "placeholder": "Optional details…",
+       "optional": true,
+       "nextQuestion": 22
+   },
+   {
+       "id": 22,
+       "question": "What challenges have you encountered?",
+       "type": "checkbox",
+       "choices": [
+           {
+               "choice": "Cost of sessions",
+               "nextQuestion": 23
+           },
+           {
+               "choice": "Scheduling conflicts",
+               "nextQuestion": 23
+           },
+           {
+               "choice": "Trainer compatibility",
+               "nextQuestion": 23
+           },
+           {
+               "choice": "Lack of desired progress",
+               "nextQuestion": 23
+           },
+           {
+               "choice": "Other",
+               "nextQuestion": 23
+           }
+       ],
+       "placeholder": "",
+       "optional": false,
+       "other": true
+   },
+   {
+       "id": 23,
+       "question": "Please provide more details if you wish (challenges)",
+       "type": "paragraph",
+       "choices": null,
+       "placeholder": "Optional details…",
+       "optional": true,
+       "nextQuestion": 28
+   },
+   {
+       "id": 24,
+       "question": "Why did you stop working with a trainer?",
+       "type": "checkbox",
+       "choices": [
+           {
+               "choice": "Cost",
+               "nextQuestion": 25
+           },
+           {
+               "choice": "Time constraints",
+               "nextQuestion": 25
+           },
+           {
+               "choice": "Achieved goals",
+               "nextQuestion": 25
+           },
+           {
+               "choice": "Relocated",
+               "nextQuestion": 25
+           },
+           {
+               "choice": "Did not enjoy the service",
+               "nextQuestion": 25
+           },
+           {
+               "choice": "Other",
+               "nextQuestion": 25
+           }
+       ],
+       "placeholder": "",
+       "optional": false,
+       "other": true
+   },
+   {
+       "id": 25,
+       "question": "Please provide more details if you wish (reasons for stopping)",
+       "type": "paragraph",
+       "choices": null,
+       "placeholder": "Optional details…",
+       "optional": true,
+       "nextQuestion": 41
+   },
+   {
+       "id": 41,
+       "question": "What benefits have you experienced?",
+       "type": "checkbox",
+       "choices": [
+           {
+               "choice": "Improved exercise technique",
+               "nextQuestion": 42
+           },
+           {
+               "choice": "Increased motivation",
+               "nextQuestion": 42
+           },
+           {
+               "choice": "Faster progress towards goals",
+               "nextQuestion": 42
+           },
+           {
+               "choice": "Accountability and structure",
+               "nextQuestion": 42
+           },
+           {
+               "choice": "Reduced injury risk",
+               "nextQuestion": 42
+           },
+           {
+               "choice": "Other",
+               "nextQuestion": 42
+           }
+       ],
+       "placeholder": "",
+       "optional": false,
+       "other": true
+   },
+   {
+       "id": 42,
+       "question": "Please provide more details if you wish (reasons for stopping)",
+       "type": "paragraph",
+       "choices": null,
+       "placeholder": "Optional details…",
+       "optional": true,
+       "nextQuestion": 28
+   },
+
+
+   {
+       "id": 28,
+       "question": "Have you previously used any fitness or training apps?",
+       "type": "multipleChoice",
+       "choices": [
+           {
+               "choice": "Yes",
+               "nextQuestion": 30
+           },
+           {
+               "choice": "No",
+               "nextQuestion": 33
+           }
+       ],
+       "placeholder": "",
+       "optional": false
+   },
+
+
+   {
+       "id": 30,
+       "question": "What could be improved?",
+       "type": "checkbox",
+       "choices": [
+           {
+               "choice": "More personalised workout plans",
+               "nextQuestion": 31
+           },
+           {
+               "choice": "Better integration with wearables",
+               "nextQuestion": 31
+           },
+           {
+               "choice": "Improved nutritional guidance and meal planning",
+               "nextQuestion": 31
+           },
+           {
+               "choice": "Clearer exercise demonstrations or video quality",
+               "nextQuestion": 31
+           },
+           {
+               "choice": "More accurate progress tracking and analytics",
+               "nextQuestion": 31
+           },
+           {
+               "choice": "Increased variety of workouts/programmes",
+               "nextQuestion": 31
+           },
+           {
+               "choice": "Better customer support / coaching interaction",
+               "nextQuestion": 31
+           },
+           {
+               "choice": "More affordable pricing / better value",
+               "nextQuestion": 31
+           },
+           {
+               "choice": "Offline access to content",
+               "nextQuestion": 31
+           },
+           {
+               "choice": "Other",
+               "nextQuestion": 31
+           }
+       ],
+       "placeholder": "",
+       "optional": false,
+       "other": true
+   },
+   {
+       "id": 31,
+       "question": "Please provide more details if you wish (fitness apps)",
+       "type": "paragraph",
+       "choices": null,
+       "placeholder": "Optional details…",
+       "optional": true,
+       "nextQuestion": 32
+   },
+   {
+       "id": 33,
+       "question": "Would you consider subscribing to a fitness app?",
+       "type": "multipleChoice",
+       "choices": [
+           {
+               "choice": "Yes",
+               "nextQuestion": 34
+           },
+           {
+               "choice": "No",
+               "nextQuestion": 34
+           }
+       ],
+       "placeholder": "",
+       "optional": false
+   },
+   {
+       "id": 34,
+       "question": "Which features would be most important to you?",
+       "type": "checkbox",
+       "choices": [
+           {
+               "choice": "Personalised workout plans tailored to my goals",
+               "nextQuestion": 35
+           },
+           {
+               "choice": "Step-by-step video exercise demonstrations",
+               "nextQuestion": 35
+           },
+           {
+               "choice": "Nutrition guidance and meal planning tools",
+               "nextQuestion": 35
+           },
+           {
+               "choice": "Progress tracking and performance analytics",
+               "nextQuestion": 35
+           },
+           {
+               "choice": "Integration with wearable devices",
+               "nextQuestion": 35
+           },
+           {
+               "choice": "Gamification features (challenges, rewards)",
+               "nextQuestion": 35
+           },
+           {
+               "choice": "Access to virtual or live coaching sessions",
+               "nextQuestion": 35
+           },
+           {
+               "choice": "Community support or social features",
+               "nextQuestion": 35
+           },
+           {
+               "choice": "Affordable subscription pricing",
+               "nextQuestion": 35
+           },
+           {
+               "choice": "Ability to train anywhere (gym/home/outdoor)",
+               "nextQuestion": 35
+           },
+           {
+               "choice": "Offline access to workouts",
+               "nextQuestion": 35
+           },
+           {
+               "choice": "Other",
+               "nextQuestion": 35
+           }
+       ],
+       "placeholder": "",
+       "optional": false,
+       "other": true
+   },
+   {
+       "id": 35,
+       "question": "Please provide more details if you wish (features)",
+       "type": "paragraph",
+       "choices": null,
+       "placeholder": "Optional details…",
+       "optional": true,
+       "nextQuestion": 32
+   },
+   {
+       "id": 32,
+       "question": "Based on the features and services you value, what monthly subscription price would you consider reasonable?",
+       "type": "multipleChoice",
+       "choices": [
+           {
+               "choice": "Under £5 per month",
+               "nextQuestion": 36
+           },
+           {
+               "choice": "£5–£9.99 per month",
+               "nextQuestion": 36
+           },
+           {
+               "choice": "£10–£14.99 per month",
+               "nextQuestion": 36
+           },
+           {
+               "choice": "£15–£19.99 per month",
+               "nextQuestion": 36
+           },
+           {
+               "choice": "£20 or more per month",
+               "nextQuestion": 36
+           },
+           {
+               "choice": "I would only use a free version",
+               "nextQuestion": 36
+           },
+           {
+               "choice": "Other",
+               "nextQuestion": 36
+           }
+       ],
+       "placeholder": "",
+       "optional": false,
+       "other": true
+   },
+   {
+       "id": 36,
+       "question": "Do you currently have, or have you previously experienced, any injuries or medical conditions that could negatively affect your training?",
+       "type": "multipleChoice",
+       "choices": [
+           {
+               "choice": "Yes, minor (does not currently limit training)",
+               "nextQuestion": 37
+           },
+           {
+               "choice": "Yes, moderate/severe (limits or modifies training)",
+               "nextQuestion": 37
+           },
+           {
+               "choice": "No",
+               "nextQuestion": 37
+           },
+           {
+               "choice": "Prefer not to say",
+               "nextQuestion": 37
+           }
+       ],
+       "placeholder": "",
+       "optional": false
+   },
+   {
+       "id": 37,
+       "question": "Are you currently taking any medication that may impact your ability to exercise?",
+       "type": "multipleChoice",
+       "choices": [
+           {
+               "choice": "Yes",
+               "nextQuestion": 38
+           },
+           {
+               "choice": "No",
+               "nextQuestion": 38
+           },
+           {
+               "choice": "Prefer not to say",
+               "nextQuestion": 38
+           }
+       ],
+       "placeholder": "",
+       "optional": false
+   },
+   {
+       "id": 38,
+       "question": "Do you have any physical limitations or disabilities we should take into consideration when creating your programme?",
+       "type": "multipleChoice",
+       "choices": [
+           {
+               "choice": "Yes, mobility limitations",
+               "nextQuestion": 39
+           },
+           {
+               "choice": "Yes, strength limitations",
+               "nextQuestion": 39
+           },
+           {
+               "choice": "Yes, endurance limitations",
+               "nextQuestion": 39
+           },
+           {
+               "choice": "No",
+               "nextQuestion": 39
+           },
+           {
+               "choice": "Other",
+               "nextQuestion": 39
+           },
+           {
+               "choice": "Prefer not to say",
+               "nextQuestion": 39
+           }
+       ],
+       "placeholder": "",
+       "optional": false,
+       "other": true
+   },
+   {
+       "id": 39,
+       "question": "Would you like to be among the first to try the Ettle Fitness App when our MVP launches?",
+       "type": "multipleChoice",
+       "choices": [
+           {
+               "choice": "Yes, I would like early access and agree to be contacted via email for updates and onboarding instructions",
+               "nextQuestion": 40
+           },
+           {
+               "choice": "Maybe, please send me more information before I decide",
+               "nextQuestion": 40
+           },
+           {
+               "choice": "No, I am not interested in early access",
+               "nextQuestion": -1
+           }
+       ],
+       "placeholder": "",
+       "optional": false
+   },
+   {
+       "id": 40,
+       "question": "Marketing Opt-In",
+       "type": "checkbox",
+       "choices": [
+           {
+               "choice": "Yes, I would like to receive updates, offers, and news from Ettle Fitness App by email. I understand I can unsubscribe at any time.",
+               "nextQuestion": -1
+           }
+       ],
+       "placeholder": "",
+       "optional": true
+   }
 ]
+
