@@ -1564,110 +1564,30 @@
        "choices": [
            {
                "choice": "Under £5 per month",
-               "nextQuestion": 36
+               "nextQuestion": 39
            },
            {
                "choice": "£5–£9.99 per month",
-               "nextQuestion": 36
+               "nextQuestion": 39
            },
            {
                "choice": "£10–£14.99 per month",
-               "nextQuestion": 36
+               "nextQuestion": 39
            },
            {
                "choice": "£15–£19.99 per month",
-               "nextQuestion": 36
+               "nextQuestion": 39
            },
            {
                "choice": "£20 or more per month",
-               "nextQuestion": 36
+               "nextQuestion": 39
            },
            {
                "choice": "I would only use a free version",
-               "nextQuestion": 36
-           },
-           {
-               "choice": "Other",
-               "nextQuestion": 36
-           }
-       ],
-       "placeholder": "",
-       "optional": false,
-       "other": true
-   },
-   {
-       "id": 36,
-       "question": "Do you currently have, or have you previously experienced, any injuries or medical conditions that could negatively affect your training?",
-       "type": "multipleChoice",
-       "choices": [
-           {
-               "choice": "Yes, minor (does not currently limit training)",
-               "nextQuestion": 37
-           },
-           {
-               "choice": "Yes, moderate/severe (limits or modifies training)",
-               "nextQuestion": 37
-           },
-           {
-               "choice": "No",
-               "nextQuestion": 37
-           },
-           {
-               "choice": "Prefer not to say",
-               "nextQuestion": 37
-           }
-       ],
-       "placeholder": "",
-       "optional": false
-   },
-   {
-       "id": 37,
-       "question": "Are you currently taking any medication that may impact your ability to exercise?",
-       "type": "multipleChoice",
-       "choices": [
-           {
-               "choice": "Yes",
-               "nextQuestion": 38
-           },
-           {
-               "choice": "No",
-               "nextQuestion": 38
-           },
-           {
-               "choice": "Prefer not to say",
-               "nextQuestion": 38
-           }
-       ],
-       "placeholder": "",
-       "optional": false
-   },
-   {
-       "id": 38,
-       "question": "Do you have any physical limitations or disabilities we should take into consideration when creating your programme?",
-       "type": "multipleChoice",
-       "choices": [
-           {
-               "choice": "Yes, mobility limitations",
-               "nextQuestion": 39
-           },
-           {
-               "choice": "Yes, strength limitations",
-               "nextQuestion": 39
-           },
-           {
-               "choice": "Yes, endurance limitations",
-               "nextQuestion": 39
-           },
-           {
-               "choice": "No",
                "nextQuestion": 39
            },
            {
                "choice": "Other",
-               "nextQuestion": 39
-           },
-           {
-               "choice": "Prefer not to say",
                "nextQuestion": 39
            }
        ],
@@ -1675,6 +1595,7 @@
        "optional": false,
        "other": true
    },
+
    {
        "id": 39,
        "question": "Would you like to be among the first to try the Ettle Fitness App when our MVP launches?",
