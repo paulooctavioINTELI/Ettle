@@ -17,6 +17,14 @@ const initialForm: PaywallForm = {
   valorAnual: "",
 };
 
+type UserLanding = {
+  id_clerk: string;
+  name: string;
+  username: string;
+  email: string;
+  picture?: string;
+};
+
 export default function AdminPage() {
   const [isAuthed, setIsAuthed] = useState(false);
   const [password, setPassword] = useState("");
@@ -26,7 +34,7 @@ export default function AdminPage() {
   const [message, setMessage] = useState<string | null>(null);
 
   // usuários conectados
-  const [connectedUsers, setConnectedUsers] = useState<any[]>([]);
+  const [connectedUsers, setConnectedUsers] = useState<UserLanding[]>([]);
   const [loadingUsers, setLoadingUsers] = useState(false);
 
   useEffect(() => {
@@ -112,8 +120,12 @@ export default function AdminPage() {
       }
 
       setMessage(`Paywall disparado com sucesso para ${userId} ✅`);
-    } catch (err: any) {
-      setMessage(err.message || "Falha ao disparar paywall ❌");
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        setMessage(err.message || "Falha ao disparar paywall ❌");
+      } else {
+        setMessage(String(err) || "Falha ao disparar paywall ❌");
+      }
     } finally {
       setLoading(false);
     }
